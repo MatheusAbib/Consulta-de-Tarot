@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cartas do Destino</title>
+	<link rel="stylesheet" href="styles.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-LbM+xM...ZTRQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image" sizes="16x16" href="img/tarot.png">
+
+</head>
+<body>
+      <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">Cartas do Destino</div>
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#home" class="ancor">Início</a></li>
+                <li><a href="#about" class="ancor">Sobre mim</a></li>
+                <li><a href="#services" class="ancor">Serviços</a></li>
+                <li><a href="#Preço" class="ancor">Valores</a></li>
+                <li><a href="#contact" class="ancor">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="overlay" id="home"></div>
+<div class="container">
+		<canvas id="particle-canvas"></canvas>
+		<header>
+      <h1 class="section-title">Bem-Vindo</h1>
+            <p class="section-description">
+                Concentre-se no seu questionamento, escolha 3 cartas e deixe sua intuição guiar as escolhas para hoje.
+            </p>		
+        </header>
+
+		<div class="card-table">
+			<div class="cards-container" id="cards-container">
+				<!-- As cartas serão geradas por JavaScript -->
+			</div>
+		</div>
+
+		<div class="message-container" id="message-container">
+			<div class="message-card">
+				<div class="message-title" id="message-title">Seu Destino</div>
+				<div class="message-text" id="message-text"></div>
+				<button id="reshuffle-btn">Embaralhar Novamente</button>
+			</div>
+		</div>
+	</div>
+
+<section id="about">
+    <div class="bg-effect bg-effect-2"></div>
+    <div class="about-container">
+
+        <h1 class="section-title">Sobre Mim</h1>
+        <p class="section-description">
+            Uma conexão ancestral com o mundo espiritual que transcende o tempo
+        </p>
+        
+        <div class="about-content">
+            <div class="about-image">
+                <!-- Substitua pela URL da sua foto -->
+                <img src="img/tarologa.jpg" alt="Taróloga">
+                
+                <!-- Efeito de estrelas -->
+                <div class="about-stars" id="about-stars"></div>
+                
+                <!-- Cristal flutuante -->
+                <div class="about-crystal"></div>
+            </div>
+            
+            <div class="about-text">
+                <h2 class="about-title">A Vidente das Almas</h2>
+                <p class="about-description">
+                    Desde minha infância sob o signo de Câncer, os mistérios do universo sempre me chamaram. Aos 8 anos, tive minha primeira visão - um presságio que se cumpriu dias depois. Aos 15, encontrei meu primeiro baralho de tarot em um mercado de antiguidades, e desde então sou guiada por suas mensagens.
+                </p>
+                <p class="about-description">
+                    Com mais de 20 anos de experiência, desenvolvi uma conexão profunda com o plano espiritual. Minhas leituras não são apenas sobre prever o futuro, mas sobre desvendar os caminhos da alma e ajudar a encontrar o verdadeiro propósito.
+                </p>
+                <p class="about-description">
+                    Minha abordagem combina o conhecimento tradicional das cartas com uma intuição aguçada, permitindo que eu veja além do óbvio e ofereça orientações que transformam vidas.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+   <section id="services">
+    <div class="section-content">
+        <h1 class="section-title">Serviços</h1>
+        <p class="section-description">Descubra os caminhos do seu destino com nossas leituras especializadas</p>
+        
+        <div class="services-container">
+            <div class="service-cards">
+                <!-- Card 1 -->
+                <div class="service-card">
+                    <div class="service-orb"></div>
+                    <div class="service-icon">🌙</div>
+                    <h3 class="service-title">Leitura Completa</h3>
+                    <p class="service-description">
+                        Uma análise profunda de todas as áreas da sua vida, revelando oportunidades, desafios e mensagens do universo para seu caminho atual.
+                    </p>
+                    <ul class="service-features">
+                        <li>Baralho completo (22 arcanos maiores)</li>
+                        <li>Análise de 12 áreas da vida</li>
+                        <li>Gravação da sessão incluída</li>
+                    </ul>
+                    <div class="service-cta">
+                         <a href="#Preço" class="ancor"> <button>Ver Valores</button></a>
+                    </div>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="service-card">
+                    <div class="service-orb"></div>
+                    <div class="service-icon">❤️</div>
+                    <h3 class="service-title">Tarot Amoroso</h3>
+                    <p class="service-description">
+                        Foco em relacionamentos e questões do coração. Revela padrões emocionais, compatibilidades e possibilidades futuras em sua vida amorosa.
+                    </p>
+                    <ul class="service-features">
+                        <li>Análise de relacionamentos atuais e futuros</li>
+                        <li>Identificação de bloqueios emocionais</li>
+                        <li>Orientação para harmonização</li>
+                    </ul>
+                    <div class="service-cta">
+                         <a href="#Preço" class="ancor"> <button>Ver Valores</button></a>
+                    </div>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="service-card">
+                    <div class="service-orb"></div>
+                    <div class="service-icon">💰</div>
+                    <h3 class="service-title">Prosperidade e Abundância</h3>
+                    <p class="service-description">
+                        Identifique bloqueios e oportunidades em sua jornada financeira e profissional. Alinhe seus objetivos com seu propósito de vida.
+                    </p>
+                    <ul class="service-features">
+                        <li>Análise de carreira e finanças</li>
+                        <li>Identificação de talentos ocultos</li>
+                        <li>Ritual de prosperidade inclusivo</li>
+                    </ul>
+                    <div class="service-cta">
+                         <a href="#Preço" class="ancor"> <button>Ver Valores</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section id="Preço">
+        <div class="section-content">
+            <h1 class="section-title">Valores</h1>
+            <p class="section-description">Escolha o serviço que melhor atende às suas necessidades espirituais</p>
+            
+            <div class="section-grid">
+                <div class="price-card">
+                    <h3 class="price-title">Consulta Básica</h3>
+                    <div class="price-amount">R$ 120</div>
+                    <ul class="price-features">
+                        <li>Leitura de 30 minutos</li>
+                        <li>Foco em 1 área específica</li>
+                        <li>3 cartas de orientação</li>
+                        <li>Resumo por mensagem</li>
+                    </ul>
+                   <a href="#contact" class="ancor"><button>Agendar</button></a>
+                </div>
+                
+                <div class="price-card">
+                    <h3 class="price-title">Pacote Completo</h3>
+                    <div class="price-amount">R$ 200</div>
+                    <ul class="price-features">
+                        <li>Leitura de 1 hora</li>
+                        <li>Análise de todas as áreas da vida</li>
+                        <li>Baralho completo (12 cartas)</li>
+                        <li>Gravação da sessão</li>
+                    </ul>
+                   <a href="#contact" class="ancor"><button>Agendar</button></a>
+                </div>
+                
+                <div class="price-card">
+                    <h3 class="price-title">Pacote Mensal</h3>
+                    <div class="price-amount">R$ 350</div>
+                    <ul class="price-features">
+                        <li>4 consultas de 30 minutos</li>
+                        <li>Acompanhamento espiritual</li>
+                        <li>Orientação contínua</li>
+                        <li>Prioridade no agendamento</li>
+                    </ul>
+                   <a href="#contact" class="ancor"><button>Agendar</button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <section id="contact">
+        <div class="section-content">
+            <h1 class="section-title">Contato</h1>
+            <p class="section-description">Estou aqui para ajudar você em sua jornada espiritual. Envie sua mensagem e agende sua consulta.</p>
+            
+            <div class="contact-form">
+<form id="contact-form" class="php-email-form">
+                    <div class="form-group">
+                        <label for="name">Seu Nome</label>
+                          <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Seu Email</label>
+                          <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Assunto</label>
+                          <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Sua Mensagem</label>
+                          <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit">Enviar Mensagem</button>
+                </form>
+                <div id="mensagem-retorno"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Cartas do Destino</h3>
+                <p>Consultas de tarot personalizadas para guiar você em sua jornada de autoconhecimento e crescimento espiritual.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Links Rápidos</h3>
+                <ul class="footer-links">
+                <li><a href="#home" class="ancor">Início</a></li>
+                <li><a href="#about" class="ancor">Sobre mim</a></li>
+                <li><a href="#services" class="ancor">Serviços</a></li>
+                <li><a href="#Preço" class="ancor">Valores</a></li>
+                <li><a href="#contact" class="ancor">Contato</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Informações</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Atendimento online ou presencial em São Paulo/SP</p>
+                <p><i class="fas fa-envelope"></i> contato@cartasdodestino.com</p>
+                <p style="text-decoration: none; color: white;"><i class="fas fa-phone" ></i > (11) 99999-9999</p>
+                <p><i class="fas fa-clock"></i> Seg-Sex: 10h-20h | Sáb: 10h-15h</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Cartas do Destino. Todos os direitos reservados.</p>
+            <p>Desenvolvido com magia e intuição por <a href="https://matheus-abib-portifolio.up.railway.app/" style="color: var(--text-color);" target="_blank">Matheus Abib.</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
