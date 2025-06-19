@@ -416,8 +416,12 @@ body {
 	justify-content: center;
 	flex-wrap: wrap;
 	gap: 1.5rem;
+<<<<<<< HEAD
     max-width: 100%;
       margin: 0 auto;
+=======
+	min-height: 350px;
+>>>>>>> 507f42a967436c887e0413cf9ed76cd125134edd
 	padding: 1rem;
 
 }
@@ -428,8 +432,11 @@ body {
     height: 100%;
 	position: relative;
 	transform-style: preserve-3d;
+<<<<<<< HEAD
       perspective: 1000px;
 
+=======
+>>>>>>> 507f42a967436c887e0413cf9ed76cd125134edd
 	transition: transform 1s, filter 0.5s;
 	cursor: pointer;
 	filter: brightness(0.9);
@@ -861,6 +868,7 @@ footer {
 }
 
 /* Responsividade */
+<<<<<<< HEAD
 @media (max-width: 1920px) {
   .card {
     width: 200px;
@@ -890,6 +898,8 @@ footer {
 }
 
 
+=======
+>>>>>>> 507f42a967436c887e0413cf9ed76cd125134edd
 
 @media (max-width: 480px) {
     .container {
@@ -1313,6 +1323,10 @@ footer {
 /* Ajustes para telas maiores */
 @media (min-width: 600px) {
     #cards-container:not(.mobile-view) {
+<<<<<<< HEAD
         grid-template-columns: repeat(auto-fit, minmax(174px, 1fr));
+=======
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+>>>>>>> 507f42a967436c887e0413cf9ed76cd125134edd
     }
 }
