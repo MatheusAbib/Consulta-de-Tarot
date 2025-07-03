@@ -66,85 +66,85 @@ class CartasMisticas {
         // Dados das cartas
         this.cartas = [
             {
-                symbol: "💘",
+                symbol: "",
                 title: "Três de Espadas",
                 description: "Coração partido",
                 fortune: "Dor emocional aguda está presente, mas esta ferida é necessária para crescimento. A cura começa quando você enfrenta a verdade, não quando foge dela. Esta tempestade vai passar."
             },
              {
-                symbol: "👹",
+                symbol: "",
                 title: "O Diabo",
                 description: "Ilusões e vícios",
                 fortune: "Cuidado com correntes invisíveis. O Diabo expõe dependências emocionais, materiais ou toxidades que você insiste em manter. Você tem o poder de se libertar, mas primeiro precisa enxergar as algemas. Questionamento radical é necessário."
             },
             {
-                symbol: "🤹",
+                symbol: "",
                 title: "O Louco",
                 description: "Liberdade e novos começos",
                 fortune: "Abrace o desconhecido com coragem. O Louco representa saltos de fé e a pureza do início. Não carregue bagagens do passado: a vida é uma aventura a ser vivida, não controlada. Risco e recompensa andam de mãos dadas."
             },
             {
-                symbol: "💀",
+                symbol: "",
                 title: "A Morte",
                 description: "Transformação radical e fim de ciclos",
                 fortune: "Não tema o fim, pois ele traz renascimento. A Morte anuncia a queda do que já não serve à sua evolução - relacionamentos, empregos ou crenças. É hora de liberar o passado para dar espaço ao novo. A dor é passageira; a transformação, eterna."
             },
             {
-                symbol: "🙃",
+                symbol: "",
                 title: "O Enforcado",
                 description: "Sacrifício e nova perspectiva",
                 fortune: "A estagnação atual é um convite à mudança de visão. O Enforcado pede pausa, entrega e aceitação. Você não está perdido, apenas vendo a vida de cabeça para baixo. A sabedoria vem quando você para de lutar."
             },
             {
-                symbol: "🗡️",
+                symbol: "",
                 title: "Dez de Espadas",
                 description: "Fim doloroso e rock bottom",
                 fortune: "O fundo do poço chegou, mas também é o início da cura. Esta carta simboliza traição, perda total ou falência emocional. Você sobreviverá a isso. Agora, só resta reconstruir - com cicatrizes, mas mais sábio."
             },
             {
-                symbol: "⚖️",
+                symbol: "",
                 title: "A Justiça",
                 description: "Equilíbrio e karma",
                 fortune: "Decisões importantes exigem clareza moral. A Justiça revela que toda ação tem consequências - agora é o momento de assumir responsabilidades. O universo está ajustando contas, e a verdade prevalecerá. Aja com integridade, mesmo que isso exija sacrifícios."
             },
             {
-                symbol: "✨",
+                symbol: "",
                 title: "A Estrela",
                 description: "Esperança e inspiração",
                 fortune: "Você entra em um ciclo de cura profunda, onde a fé no futuro será restaurada. A Estrela indica um momento de conexão com o divino e com seu propósito. Confie no fluxo da vida: a serenidade retornará após tempos turbulentos."
             },
             {
-                symbol: "🌙",
+                symbol: "",
                 title: "A Lua",
                 description: "Intuição e mistério",
                 fortune: "Caminhos nebulosos se abrem à sua frente. Nem tudo é o que parece, e ilusões podem confundir seus julgamentos. A Lua convida à introspecção e escuta da voz interior. Sinais virão através dos sonhos e da sensibilidade. Cuidado com enganos ou autoengano."
             },
             {
-                symbol: "☀️",
+                symbol: "",
                 title: "O Sol",
                 description: "Sucesso e positividade",
                 fortune: "O Sol anuncia alegria genuína, clareza mental e êxito após desafios. Este é o momento para expressar quem você é com autenticidade. Progresso material e emocional estão ao seu alcance. A verdade será iluminada, e relações florescerão com leveza."
             },
             {
-                symbol: "⚡",
+                symbol: "",
                 title: "A Torre",
                 description: "Mudança repentina",
                 fortune: "Uma estrutura que já não sustenta sua evolução será abalada. A Torre não traz destruição gratuita, mas libertação. Aceite o colapso como necessário para renascer com mais força e autenticidade. O que é verdadeiro permanecerá; o que era ilusão, cairá."
             },
             {
-                symbol: "🔮",
+                symbol: "",
                 title: "O Mago",
                 description: "Manifestação e poder",
                 fortune: "Você possui todos os recursos — internos e externos — para iniciar algo grandioso. O Mago representa domínio da mente, ação consciente e o poder da palavra. É hora de transformar ideias em realidade, com intenção clara e alinhamento espiritual."
             },
             {
-                symbol: "🌊",
+                symbol: "",
                 title: "O Oceano",
                 description: "Emoções e intuição",
                 fortune: "O Oceano, como arquétipo, fala da vastidão emocional e do inconsciente coletivo. Ele pede rendição ao sentir, à empatia e ao acolhimento. Há uma necessidade de cura ancestral. Mergulhe sem medo: nas profundezas, está o encontro consigo mesmo."
             },
             {
-            symbol: "🛡️",
+            symbol: "",
             title: "O Carro",
             description: "Vitória através do controle",
             fortune: "Você está no comando, mas as rédeas devem ser equilibradas. Esta carta fala de disciplina focada. Forças opostas podem ser harmonizadas - direção clara levará ao triunfo. Siga em frente com determinação."
