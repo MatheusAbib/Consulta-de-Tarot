@@ -20,14 +20,14 @@
         }
 
  
-body {
-	font-family: "Cormorant Garamond", serif;
-	background-color: var(--bg-color);
-	background-image: radial-gradient(circle, #1a1333 0%, #0d0b1a 100%);
-	color: var(--text-color);
-	min-height: 100vh;
-	overflow-x: hidden;
-}
+        body {
+            font-family: "Cormorant Garamond", serif;
+            background-color: var(--bg-color);
+            background-image: radial-gradient(circle, #1a1333 0%, #0d0b1a 100%);
+            color: var(--text-color);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
 
 
         .navbar {
