@@ -1253,7 +1253,6 @@ footer {
 /* Apenas para mobile */
 .mobile-view #cards-container {
     grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
     padding: 5px;
 }
 
@@ -1264,7 +1263,7 @@ footer {
 }
 
 #cards-container.mobile-view {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(115px, 1fr));
 }
 
 /* Layout para desktop */
