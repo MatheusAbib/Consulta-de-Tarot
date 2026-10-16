@@ -158,7 +158,7 @@ export function ModalBoasVindas() {
         {etapa === "apresentacao" && (
           <div className="modal-boas-vindas__etapa">
             <div className="modal-boas-vindas__logo">
-              <img src="/piramide-branco.png" alt="Cartas do Destino" />
+              <img src={`${import.meta.env.BASE_URL}piramide-branco.png`} alt="Cartas do Destino" />
             </div>
             <h2 className="modal-boas-vindas__titulo">{APRESENTACAO[indice].titulo}</h2>
             <p className="modal-boas-vindas__texto">{APRESENTACAO[indice].texto}</p>
@@ -202,7 +202,7 @@ export function ModalBoasVindas() {
         {etapa === "formulario" && (
           <form className="modal-boas-vindas__etapa" onSubmit={handleSubmit}>
             <div className="modal-boas-vindas__logo">
-              <img src="/piramide-branco.png" alt="Cartas do Destino" />
+              <img src={`${import.meta.env.BASE_URL}piramide-branco.png`} alt="Cartas do Destino" />
             </div>
             <h2 className="modal-boas-vindas__titulo">
               {completo ? "Suas informações" : "Para começar"}
@@ -307,3 +307,4 @@ export function ModalBoasVindas() {
     </div>
   );
 }
+
