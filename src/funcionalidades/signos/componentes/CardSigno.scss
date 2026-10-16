@@ -1,0 +1,53 @@
+﻿@use "../../../estilos/variaveis" as *;
+
+.card-signo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.8rem 1.2rem;
+  cursor: pointer;
+  transition: all $transicao-media;
+  color: $cor-texto;
+  border: 1px solid rgba(153, 105, 255, 0.25);
+
+  &:hover {
+    border-color: rgba(153, 105, 255, 0.6);
+  }
+
+  &.ativo {
+    border-color: rgba(153, 105, 255, 0.8);
+    background: linear-gradient(135deg, rgba(153, 105, 255, 0.18), rgba(255, 105, 161, 0.18));
+    box-shadow: 0 0 25px rgba(153, 105, 255, 0.4);
+  }
+
+  &__simbolo {
+    color: $cor-primaria;
+    margin-bottom: 0.8rem;
+    transition: transform $transicao-media;
+  }
+
+  &:hover &__simbolo,
+  &.ativo &__simbolo {
+    color: $cor-secundaria;
+  }
+
+  &__nome {
+    font-family: $fonte-titulo;
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+    color: $cor-texto;
+  }
+
+  &__elemento {
+    font-size: 0.85rem;
+    color: $cor-secundaria;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+  }
+
+  &__datas {
+    font-size: 0.8rem;
+    opacity: 0.6;
+    font-family: $fonte-mono;
+  }
+}

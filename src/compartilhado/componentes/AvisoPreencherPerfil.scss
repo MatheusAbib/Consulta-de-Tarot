@@ -1,0 +1,40 @@
+﻿@use "../../estilos/variaveis" as *;
+
+.aviso-preencher-perfil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 2rem;
+  max-width: 500px;
+  margin: 0 auto;
+
+  &__icone {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    background: $gradiente-primario;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: flutuar 5s ease-in-out infinite;
+  }
+
+  &__titulo {
+    font-family: $fonte-titulo;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: $cor-texto;
+  }
+
+  &__descricao {
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.85;
+    margin-bottom: 2rem;
+  }
+
+  &__botao {
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+  }
+}

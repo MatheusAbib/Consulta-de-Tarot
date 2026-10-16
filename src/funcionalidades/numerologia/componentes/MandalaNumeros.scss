@@ -1,0 +1,117 @@
+﻿@use "../../../estilos/variaveis" as *;
+
+.mandala-numeros {
+  width: 100%;
+  max-width: 600px;
+  margin: 2rem auto 4rem;
+
+  &__svg-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+  }
+
+  &__svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__no {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.15rem;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: rgba(30, 25, 50, 0.9);
+    border: 1px solid rgba(167, 139, 250, 0.4);
+    color: $cor-texto;
+    cursor: pointer;
+    transition: all $transicao-media;
+    backdrop-filter: blur(4px);
+    padding: 0;
+
+    i {
+      font-size: 0.85rem;
+      color: $cor-primaria;
+      transition: color $transicao-rapida;
+    }
+
+    &:hover {
+      border-color: $cor-secundaria;
+      transform: translate(-50%, -50%) scale(1.03);
+
+      i { color: $cor-secundaria; }
+    }
+
+    &.ativo {
+      background: linear-gradient(135deg, rgba(167, 139, 250, 0.35), rgba(240, 164, 184, 0.35));
+      border-color: $cor-secundaria;
+      box-shadow: 0 0 30px rgba(167, 139, 250, 0.6);
+
+      i { color: $cor-secundaria; }
+    }
+
+    &--centro {
+      width: 105px;
+      height: 105px;
+      background: linear-gradient(135deg, rgba(167, 139, 250, 0.5), rgba(240, 164, 184, 0.4));
+      border: 2px solid $cor-secundaria;
+      z-index: 2;
+
+      .mandala-numeros__valor { font-size: 1.8rem; }
+      .mandala-numeros__rotulo { font-size: 0.7rem; }
+    }
+  }
+
+  &__valor {
+    font-family: $fonte-titulo;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: $cor-texto;
+    line-height: 1;
+  }
+
+  &__rotulo {
+    font-family: $fonte-titulo;
+    font-size: 0.6rem;
+    color: $cor-texto-suave;
+    text-align: center;
+    line-height: 1.1;
+    padding: 0 0.3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .mandala-numeros {
+    max-width: 340px;
+    margin: 1rem auto 3rem;
+
+    &__no {
+      width: 62px;
+      height: 62px;
+
+      i { font-size: 0.7rem; }
+
+      &--centro {
+        width: 75px;
+        height: 75px;
+
+        .mandala-numeros__valor { font-size: 1.3rem; }
+        .mandala-numeros__rotulo { font-size: 0.6rem; }
+      }
+    }
+
+    &__valor { font-size: 1.05rem; }
+    &__rotulo {
+      font-size: 0.5rem;
+      letter-spacing: 0;
+    }
+  }
+}

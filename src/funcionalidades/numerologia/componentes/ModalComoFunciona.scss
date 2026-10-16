@@ -1,0 +1,272 @@
+﻿@use "../../../estilos/variaveis" as *;
+
+.modal-como-funciona {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: aparecer 0.3s ease;
+
+  &__caixa {
+    position: relative;
+    width: 100%;
+    max-width: 750px;
+    max-height: 80vh;
+    overflow-y: auto;
+    background: linear-gradient(135deg, rgba(20, 15, 40, 0.98), rgba(15, 10, 30, 0.94));
+    border: 1px solid rgba(167, 139, 250, 0.4);
+    border-radius: 24px;
+    padding: 2.5rem;
+  }
+
+  &__fechar {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(167, 139, 250, 0.15);
+    border: 1px solid rgba(167, 139, 250, 0.3);
+    color: $cor-texto;
+    cursor: pointer;
+    transition: all $transicao-rapida;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background: rgba(167, 139, 250, 0.35);
+      transform: rotate(90deg);
+    }
+  }
+
+  &__titulo {
+    font-family: $fonte-titulo;
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    background: $gradiente-primario;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__subtitulo {
+    font-family: $fonte-titulo;
+    font-size: 1.1rem;
+    color: $cor-secundaria;
+    margin: 1.8rem 0 0.8rem;
+  }
+
+  &__texto {
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: justify;
+    opacity: 0.9;
+    margin-bottom: 1rem;
+
+    strong { color: $cor-secundaria; }
+  }
+
+  &__tabela {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 1rem;
+    background: rgba(167, 139, 250, 0.08);
+    border: 1px solid rgba(167, 139, 250, 0.25);
+    border-radius: 12px;
+    margin-bottom: 1rem;
+  }
+
+  &__linha {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 0.3rem;
+  }
+
+  &__celula {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem;
+    font-family: $fonte-mono;
+    font-size: 0.85rem;
+    color: $cor-texto;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 6px;
+    min-height: 28px;
+
+    &:nth-child(even) {
+      color: $cor-secundaria;
+    }
+  }
+
+  &__lista {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 0.7rem;
+
+    li {
+      position: relative;
+      padding-left: 1.3rem;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      opacity: 0.9;
+
+      &::before {
+        content: "✦";
+        position: absolute;
+        left: 0;
+        color: $cor-primaria;
+      }
+
+      strong { color: $cor-secundaria; }
+    }
+  }
+
+  &__exemplo {
+    font-family: $fonte-mono;
+    font-size: 1.05rem;
+    padding: 0.9rem 1.2rem;
+    background: rgba(167, 139, 250, 0.12);
+    border-left: 3px solid $cor-secundaria;
+    border-radius: 8px;
+    margin: 0.5rem 0 1rem;
+    color: $cor-texto;
+
+    strong { color: $cor-secundaria; }
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .modal-como-funciona {
+    padding: 1rem;
+
+    &__caixa {
+      padding: 1.8rem 1.3rem;
+      border-radius: 18px;
+    }
+
+    &__titulo {
+      font-size: 1.3rem;
+    }
+
+    &__subtitulo {
+      font-size: 1rem;
+    }
+
+    &__texto,
+    &__lista li {
+      font-size: 0.9rem;
+    }
+
+    &__celula {
+      font-size: 0.7rem;
+      padding: 0.25rem;
+    }
+  }
+}
+
+.modal-como-funciona__tabela-numeros {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.modal-como-funciona__linha-numero {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  background: rgba(167, 139, 250, 0.06);
+  border: 1px solid rgba(167, 139, 250, 0.15);
+  transition: all $transicao-rapida;
+
+  &:hover {
+    background: rgba(167, 139, 250, 0.12);
+    border-color: rgba(167, 139, 250, 0.3);
+  }
+}
+
+.modal-como-funciona__numero-destaque {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(167, 139, 250, 0.35), rgba(240, 164, 184, 0.25));
+  border: 1px solid rgba(167, 139, 250, 0.5);
+  font-family: $fonte-titulo;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: $cor-texto;
+  flex-shrink: 0;
+}
+
+.modal-como-funciona__numero-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.modal-como-funciona__numero-vibracao {
+  font-family: $fonte-titulo;
+  font-size: 0.95rem;
+  color: $cor-secundaria;
+  text-align: left;
+}
+
+.modal-como-funciona__numero-significado {
+  font-size: 0.9rem;
+  color: $cor-texto-suave;
+  opacity: 0.85;
+}
+
+.modal-como-funciona__areas {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.modal-como-funciona__area {
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  background: rgba(167, 139, 250, 0.05);
+  border-left: 3px solid $cor-primaria;
+}
+
+.modal-como-funciona__area-titulo {
+  font-family: $fonte-titulo;
+  font-size: 1rem;
+  color: $cor-primaria;
+  margin-bottom: 0.4rem;
+}
+
+.modal-como-funciona__area-descricao {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: $cor-texto-suave;
+  opacity: 0.9;
+  margin-bottom: 0.5rem;
+}
+
+.modal-como-funciona__area-exemplo {
+  font-size: 0.88rem;
+  font-style: italic;
+  color: $cor-secundaria;
+  opacity: 0.85;
+  margin: 0;
+  padding-left: 0.8rem;
+  border-left: 1px dashed rgba(240, 164, 184, 0.4);
+}

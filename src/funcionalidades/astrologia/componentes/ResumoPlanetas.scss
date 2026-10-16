@@ -1,0 +1,146 @@
+﻿@use "../../../estilos/variaveis" as *;
+
+.resumo-planetas {
+  max-width: 700px;
+  margin: 3rem auto 0;
+
+  &__titulo {
+    font-family: $fonte-titulo;
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    background: $gradiente-primario;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__destaques {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  &__destaque {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1.5rem;
+    text-align: center;
+
+    &:hover {
+      transform: none;
+    }
+  }
+
+  &__destaque-rotulo {
+    font-family: $fonte-titulo;
+    font-size: 0.85rem;
+    color: $cor-secundaria;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  &__destaque-valor {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-family: $fonte-titulo;
+    font-size: 1.3rem;
+    color: $cor-texto;
+  }
+
+  &__destaque-grau {
+    font-family: $fonte-mono;
+    font-size: 0.9rem;
+    opacity: 0.7;
+  }
+
+  &__lista {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.8rem 1.2rem;
+    background: rgba(40, 32, 70, 0.5);
+    border: 1px solid rgba(167, 139, 250, 0.2);
+    border-radius: 14px;
+    transition: all $transicao-rapida;
+
+    &:hover {
+      border-color: rgba(167, 139, 250, 0.5);
+      background: rgba(167, 139, 250, 0.1);
+      transform: translateX(4px);
+    }
+  }
+
+  &__item-planeta {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-family: $fonte-titulo;
+    font-size: 1rem;
+    color: $cor-texto;
+  }
+
+  &__item-posicao {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  &__item-grau {
+    font-family: $fonte-mono;
+    font-size: 0.9rem;
+    color: $cor-secundaria;
+    min-width: 36px;
+    text-align: right;
+  }
+
+  &__item-signo {
+    font-family: $fonte-titulo;
+    font-size: 0.95rem;
+    color: $cor-texto-suave;
+    min-width: 90px;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .resumo-planetas {
+    &__titulo {
+      font-size: 1.3rem;
+    }
+
+    &__destaques {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    &__item {
+      padding: 0.7rem 1rem;
+    }
+
+    &__item-planeta {
+      font-size: 0.9rem;
+      gap: 0.6rem;
+    }
+
+    &__item-signo {
+      font-size: 0.85rem;
+      min-width: auto;
+    }
+
+    &__item-grau {
+      font-size: 0.8rem;
+      min-width: auto;
+    }
+  }
+}

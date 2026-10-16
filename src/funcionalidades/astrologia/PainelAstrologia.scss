@@ -1,0 +1,70 @@
+﻿@use "../../estilos/variaveis" as *;
+
+.painel-astrologia {
+  width: 100%;
+  padding: 2rem 0;
+
+  &__cabecalho {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+  }
+
+  &__titulo {
+    font-family: $fonte-titulo;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    background: $gradiente-primario;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__descricao {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.85;
+  }
+
+  &__carregando {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 3rem;
+    font-size: 1.1rem;
+    color: $cor-texto-suave;
+
+    i { font-size: 1.5rem; color: $cor-primaria; }
+  }
+
+  &__erro {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    justify-content: center;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    background: rgba(255, 105, 105, 0.1);
+    border: 1px solid rgba(255, 105, 105, 0.4);
+    color: #ff9f9f;
+    font-size: 1rem;
+
+    i { font-size: 1.1rem; }
+  }
+
+  &__acoes {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .painel-astrologia {
+    &__cabecalho { margin-bottom: 2rem; }
+    &__titulo { font-size: 1.6rem; }
+    &__descricao { font-size: 1rem; }
+  }
+}

@@ -1,0 +1,23 @@
+﻿@use "./estilos/variaveis" as *;
+
+.transicao-pagina {
+  animation: deslizar-lateral 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+}
+
+@keyframes deslizar-lateral {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .transicao-pagina {
+    animation: none;
+  }
+}

@@ -1,0 +1,23 @@
+﻿@use "../../estilos/variaveis" as *;
+
+.pagina-inicio {
+  padding-top: 10rem;
+  min-height: 100vh;
+
+  &__cabecalho {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__painel {
+    animation: deslizar-lateral 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .pagina-inicio {
+    padding-top: 8rem;
+  }
+}
