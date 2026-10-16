@@ -65,9 +65,6 @@ export const RESUMOS: ResumosNumeros = {
     22: "As pessoas te veem como grande construtor. Sua visão e sua capacidade impressionam — e naturalmente projetam em você a expectativa de realizar coisas grandes.",
     33: "As pessoas te veem como curador. Seu amor e sua presença curam — e naturalmente sentem alívio quando você está perto.",
   },
-  aniversario: {},
-  maturidade: {},
-  karmico: {},
   aniversario: {
     1: "Seu dom é a iniciativa. Você trouxe ao nascer uma capacidade natural de começar coisas — de ir primeiro onde ninguém foi.",
     2: "Seu dom é a sensibilidade. Você trouxe ao nascer uma percepção emocional rara — de perceber o que os outros sentem antes que eles mesmos percebam.",

@@ -1,4 +1,5 @@
-﻿import { FormEvent, useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
+import type { FormEvent } from "react";
 import { toast } from "react-toastify";
 import { carregarMunicipios } from "municipios-brasil";
 import type { ApiMunicipios, Municipio } from "municipios-brasil";

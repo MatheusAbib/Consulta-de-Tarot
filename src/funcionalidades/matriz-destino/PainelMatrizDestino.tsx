@@ -4,12 +4,11 @@ import { usePerfil } from "../../nucleo/contextos/PerfilContexto";
 import { AvisoPreencherPerfil } from "../../compartilhado/componentes/AvisoPreencherPerfil";
 import { DiagramaMatriz } from "./componentes/DiagramaMatriz";
 import { ModalMatriz } from "./componentes/ModalMatriz";
-import { BotaoMistico } from "../../compartilhado/componentes/BotaoMistico";
 import "./PainelMatrizDestino.scss";
 
 export function PainelMatrizDestino() {
   const { perfil, completo } = usePerfil();
-  const { resultado, erro, calcular, limpar } = useMatrizDestino();
+  const { resultado, erro, calcular } = useMatrizDestino();
   const [modalAberto, setModalAberto] = useState(false);
 
   useEffect(() => {
@@ -76,3 +75,4 @@ export function PainelMatrizDestino() {
     </div>
   );
 }
+

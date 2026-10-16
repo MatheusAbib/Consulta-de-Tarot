@@ -57,7 +57,7 @@ export const SOL: Record<string, InterpretacaoPlanetaSigno> = {
       "Você também tem uma capacidade rara de materializar. Você pega uma ideia, um sonho, uma intenção — e transforma em algo concreto. Não é só planejar: é executar com consistência. Você coloca tijolo sobre tijolo, sem pular etapa, sem atalho, e no fim tem uma obra de verdade.",
       "Você tem ainda um faro natural pra qualidade. Você percebe quando algo é bem-feito, quando é genuíno, quando tem alma. Isso te torna referência em qualquer área que valorize excelência. As pessoas confiam no seu julgamento porque sabem que você não se impressiona com o superficial.",
     ],
-    desafio: [
+    desafios: [
       "Seu maior desafio é a teimosia. Você tem convicções firmes — e mudar de ideia te parece traição. Mesmo quando percebe que está errado, você resiste. Mesmo quando o caminho pede mudança, você se agarra ao plano original. Sua firmeza é uma virtude — mas pode virar prisão.",
       "Outro desafio é o apego. Você se apega a pessoas, objetos, lugares, versões de si. Quando algo acaba, você demora a soltar. Quando alguém vai embora, você guarda. Quando uma fase termina, você revive mentalmente. Isso te faz sofrer mais do que precisaria — porque a vida continua pedindo movimento.",
       "E há a dificuldade com o novo. Você confia no testado, no comprovado, no que já mostrou que funciona. Ideias ousadas, mudanças bruscas, situações imprevisíveis — tudo isso te incomoda. Mas a vida é mudança. Você precisa aprender que às vezes o que parece seguro deixa de ser — e que a única segurança real está na sua capacidade de se adaptar.",
@@ -419,3 +419,4 @@ export const SOL: Record<string, InterpretacaoPlanetaSigno> = {
     ],
   },
 };
+

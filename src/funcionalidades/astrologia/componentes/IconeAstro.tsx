@@ -1,5 +1,4 @@
-﻿import { ReactNode } from "react";
-import aries from "zodiacfonts/icons/signs/aries.svg?raw";
+﻿import aries from "zodiacfonts/icons/signs/aries.svg?raw";
 import taurus from "zodiacfonts/icons/signs/taurus.svg?raw";
 import gemini from "zodiacfonts/icons/signs/gemini.svg?raw";
 import cancer from "zodiacfonts/icons/signs/cancer.svg?raw";
@@ -80,3 +79,5 @@ export function IconeAstro({ signo, planeta, tamanho = 24, className = "" }: Pro
     />
   );
 }
+
+

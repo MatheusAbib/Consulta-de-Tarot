@@ -5,12 +5,11 @@ import { AvisoPreencherPerfil } from "../../compartilhado/componentes/AvisoPreen
 import { MapaAstral } from "./componentes/MapaAstral";
 import { ResumoPlanetas } from "./componentes/ResumoPlanetas";
 import { Interpretacoes } from "./componentes/Interpretacoes";
-import { BotaoMistico } from "../../compartilhado/componentes/BotaoMistico";
 import "./PainelAstrologia.scss";
 
 export function PainelAstrologia() {
   const { perfil, completo } = usePerfil();
-  const { resultado, carregando, erro, calcular, limpar } = useAstrologia();
+  const { resultado, carregando, erro, calcular } = useAstrologia();
 
   useEffect(() => {
     if (completo && perfil && !resultado) {
@@ -70,3 +69,4 @@ export function PainelAstrologia() {
     </div>
   );
 }
+

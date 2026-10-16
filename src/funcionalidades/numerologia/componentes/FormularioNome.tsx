@@ -1,4 +1,5 @@
-﻿import { FormEvent, useState } from "react";
+﻿import { useState } from "react";
+import type { FormEvent } from "react";
 import type { DadosNumerologia } from "../servicos/numerologia";
 import "./FormularioNome.scss";
 
@@ -62,3 +63,4 @@ export function FormularioNome({ aoEnviar }: Props) {
     </form>
   );
 }
+

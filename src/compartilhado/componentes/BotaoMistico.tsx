@@ -1,4 +1,4 @@
-﻿import { ButtonHTMLAttributes, ReactNode } from "react";
+﻿import type { ButtonHTMLAttributes, ReactNode } from "react";
 import "./BotaoMistico.scss";
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -13,4 +13,5 @@ export function BotaoMistico({ children, variante = "primario", className = "", 
     </button>
   );
 }
+
 

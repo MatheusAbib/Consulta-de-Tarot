@@ -1,4 +1,5 @@
-﻿import { FormEvent, useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
+import type { FormEvent } from "react";
 import { carregarMunicipios } from "municipios-brasil";
 import type { ApiMunicipios, Municipio } from "municipios-brasil";
 import type { DadosNascimento } from "../servicos/astrologia";
@@ -145,3 +146,4 @@ export function FormularioNascimento({ aoEnviar, carregando }: Props) {
     </form>
   );
 }
+
