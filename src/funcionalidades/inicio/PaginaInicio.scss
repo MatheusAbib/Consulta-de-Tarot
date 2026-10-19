@@ -9,8 +9,10 @@
   &__painel {
     animation: deslizar-lateral 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     width: 100%;
+    padding: 2.5rem 1rem 0;
     flex: 1;
     min-height: calc(100vh - 200px);
+    padding: 2rem 0;
     display: flex;
     flex-direction: column;
   }
