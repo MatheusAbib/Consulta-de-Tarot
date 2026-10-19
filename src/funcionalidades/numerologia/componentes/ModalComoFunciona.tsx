@@ -179,11 +179,12 @@ export function ModalComoFunciona({ aberto, aoFechar }: Props) {
           </p>
         </section>
       </div>
-      <button type="button" class="modal-como-funciona__fechar" onClick={aoFechar} aria-label="Fechar">
+      <button type="button" className="modal-como-funciona__fechar" onClick={aoFechar} aria-label="Fechar">
         <i className="fa-solid fa-xmark" />
       </button>
     </div>
   );
 }
+
 
 

@@ -8,6 +8,9 @@ import "./FormularioNascimento.scss";
 interface Props {
   aoEnviar: (dados: DadosNascimento) => void;
   carregando: boolean;
+  titulo?: string;
+  subtitulo?: string;
+  rotuloBotao?: string;
 }
 
 export function FormularioNascimento({
@@ -152,5 +155,7 @@ export function FormularioNascimento({
     </form>
   );
 }
+
+
 
 

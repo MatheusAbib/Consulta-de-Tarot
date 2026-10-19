@@ -197,11 +197,12 @@ export function ModalMatriz({ aberto, aoFechar, dataNascimento }: Props) {
 
   
       </div>
-      <button type="button" class="modal-matriz__fechar" onClick={aoFechar} aria-label="Fechar">
+      <button type="button" className="modal-matriz__fechar" onClick={aoFechar} aria-label="Fechar">
         <i className="fa-solid fa-xmark" />
       </button>
     </div>
   );
 }
+
 
 

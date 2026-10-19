@@ -1,4 +1,4 @@
-﻿# 🔮 ORACULVM — Portal Interativo
+﻿# 🔮 ORACULVM — Painel Mistico
 
 Um portal místico online que reúne **oito experiências** diferentes em uma única plataforma. Tudo calculado de verdade, direto no navegador, sem promessas mágicas e sem enrolação.
 
