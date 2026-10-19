@@ -8,7 +8,7 @@ export function Rodape() {
           <h3>ORACULVM</h3>
           <p>
             Um portal para autoconhecimento, intuição e conexão.<br></br>
-            Explore o tarô, a astrologia, a numerologia e signos.
+            Explore o tarô, a astrologia, a numerologia, a matriz do destino, os signos, a lua e a biblioteca esotérica.
           </p>
         </div>
       </div>
@@ -19,3 +19,4 @@ export function Rodape() {
     </footer>
   );
 }
+

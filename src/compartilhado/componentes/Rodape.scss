@@ -18,14 +18,9 @@
   &__coluna {
     h3 {
       font-family: $fonte-titulo;
-      font-size: 1.5rem;
-      margin-bottom: 1.5rem;
+      font-size: 1.4rem;
+      margin-bottom: 1.3rem;
       color: $cor-primaria;
-    }
-
-    p {
-      margin-bottom: 1rem;
-      line-height: 1.6;
     }
   }
 
@@ -88,8 +83,8 @@
 
   &__base {
     max-width: 1200px;
-    margin: 3rem auto 0;
-    padding-top: 1.5rem;
+    margin: 2rem auto 0;
+    padding-top: 1.3rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 0.9rem;
     opacity: 0.7;
