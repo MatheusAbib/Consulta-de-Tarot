@@ -97,26 +97,3 @@
   }
 }
 
-@media (max-width: $breakpoint-mobile) {
-  .mapa-astral {
-    max-width: 100%;
-    margin: 1rem auto;
-
-    &__planeta {
-      width: 30px;
-      height: 30px;
-
-      svg {
-        width: 14px;
-        height: 14px;
-      }
-    }
-
-    &__signo {
-      svg {
-        width: 20px;
-        height: 20px;
-      }
-    }
-  }
-}

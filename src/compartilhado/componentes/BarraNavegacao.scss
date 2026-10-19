@@ -27,6 +27,7 @@
   &__logo {
     font-family: $fonte-titulo;
     font-size: 1.6rem;
+    border: none;
     font-weight: 700;
     background: $gradiente-mistico;
     -webkit-background-clip: text;
@@ -61,25 +62,4 @@
   }
 }
 
-@media (max-width: $breakpoint-mobile) {
-  .barra-navegacao {
-    padding: 0.8rem 4%;
 
-    &.rolado {
-      padding: 0.6rem 4%;
-    }
-
-    &__logo {
-      font-size: 1.3rem;
-    }
-
-    &__contato span {
-      display: none;
-    }
-
-    &__contato {
-      padding: 0.6rem;
-      border-radius: 50%;
-    }
-  }
-}

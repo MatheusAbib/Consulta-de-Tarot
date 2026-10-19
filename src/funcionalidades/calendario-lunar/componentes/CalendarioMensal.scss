@@ -1,0 +1,172 @@
+﻿@use "../../../estilos/variaveis" as *;
+
+.calendario-mensal {
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.5rem;
+  border-radius: 20px;
+  background: rgba(40, 32, 70, 0.65);
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  backdrop-filter: blur(8px);
+
+  &__cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.8rem;
+    margin-bottom: 1.2rem;
+  }
+
+  &__titulo-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    flex: 1;
+  }
+
+  &__titulo {
+    font-family: $fonte-titulo;
+    font-size: 1.15rem;
+    color: $cor-primaria;
+    text-align: center;
+  }
+
+  &__hoje-btn {
+    background: none;
+    border: none;
+    color: $cor-secundaria;
+    font-family: $fonte-titulo;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    transition: all $transicao-rapida;
+
+    &:hover {
+      background: rgba(240, 164, 184, 0.12);
+    }
+  }
+
+  &__nav {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(167, 139, 250, 0.08);
+    border: 1px solid rgba(167, 139, 250, 0.45);
+    color: $cor-primaria;
+    font-size: 1.3rem;
+    line-height: 1;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    transition: all $transicao-rapida;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+
+    &:hover {
+      background: rgba(167, 139, 250, 0.22);
+      border-color: $cor-primaria;
+      transform: scale(1.05);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+
+  &__dias-semana {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__dia-semana {
+    text-align: center;
+    font-family: $fonte-titulo;
+    font-size: 0.75rem;
+    color: $cor-secundaria;
+    opacity: 0.8;
+    padding: 0.3rem 0;
+  }
+
+  &__grade {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.3rem;
+  }
+
+  &__celula,
+  &__celula-vazia {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.15rem;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(167, 139, 250, 0.1);
+    transition: all $transicao-rapida;
+    font: inherit;
+    color: inherit;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  &__celula-vazia {
+    background: transparent;
+    border: none;
+    cursor: default;
+  }
+
+  &__celula:hover {
+    border-color: rgba(167, 139, 250, 0.4);
+    background: rgba(167, 139, 250, 0.08);
+  }
+
+  &__celula.hoje {
+    border-color: $cor-secundaria;
+    background: rgba(240, 164, 184, 0.12);
+    box-shadow: 0 0 12px rgba(240, 164, 184, 0.3);
+
+    .calendario-mensal__numero {
+      color: $cor-secundaria;
+      font-weight: 700;
+    }
+  }
+
+  &__celula.selecionado {
+    border-color: $cor-primaria;
+    background: rgba(167, 139, 250, 0.18);
+    box-shadow: 0 0 14px rgba(167, 139, 250, 0.45);
+    transform: scale(1.05);
+
+    .calendario-mensal__numero {
+      color: $cor-primaria;
+      font-weight: 700;
+    }
+  }
+
+  &__numero {
+    font-family: $fonte-titulo;
+    font-size: 0.75rem;
+    color: $cor-texto-suave;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .calendario-mensal {
+    padding: 1rem;
+
+    &__titulo { font-size: 1rem; }
+    &__numero { font-size: 0.65rem; }
+    &__dia-semana { font-size: 0.65rem; }
+    &__nav { width: 34px; height: 34px; font-size: 1.1rem; }
+  }
+}

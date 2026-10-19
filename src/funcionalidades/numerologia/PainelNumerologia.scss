@@ -1,37 +1,50 @@
 ﻿@use "../../estilos/variaveis" as *;
 
 .painel-numerologia {
-  width: 100%;
-  padding: 2rem 0;
-
   &__cabecalho {
     text-align: center;
-    max-width: 700px;
-    margin: 0 auto 3rem;
+    margin-bottom: 2rem;
+  }
+
+  &__titulo-linha {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
   }
 
   &__titulo {
     font-family: $fonte-titulo;
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
-    background: $gradiente-primario;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-size: 1.8rem;
+    color: $cor-primaria;
+    letter-spacing: 0.04em;
   }
 
   &__descricao {
-    font-size: 1.1rem;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
     line-height: 1.6;
+    color: $cor-texto-suave;
     opacity: 0.85;
   }
 
-  &__lista {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    max-width: 900px;
-    margin: 0 auto;
+  &__info {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(167, 139, 250, 0.15);
+    border: 1px solid rgba(167, 139, 250, 0.35);
+    color: $cor-secundaria;
+    cursor: pointer;
+    transition: all $transicao-rapida;
+
+    &:hover {
+      background: rgba(167, 139, 250, 0.35);
+      transform: scale(1.08);
+    }
   }
 
   &__erro {
@@ -40,158 +53,114 @@
     gap: 0.7rem;
     justify-content: center;
     margin-top: 2rem;
-    padding: 1rem 2rem;
+    padding: 1rem 1.5rem;
     border-radius: 12px;
     background: rgba(255, 105, 105, 0.1);
     border: 1px solid rgba(255, 105, 105, 0.4);
     color: #ff9f9f;
-    font-size: 1rem;
+    font-size: 0.95rem;
+  }
 
-    i {
-      font-size: 1.1rem;
+  &__layout {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 1.5rem;
+    align-items: start;
+    margin-top: 2rem;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    position: sticky;
+    top: 90px;
+  }
+
+  &__aba {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.6rem 0.8rem;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(167, 139, 250, 0.15);
+    color: $cor-texto-suave;
+    font-family: $fonte-titulo;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all $transicao-rapida;
+    text-align: left;
+
+    &:hover {
+      border-color: rgba(167, 139, 250, 0.45);
+      background: rgba(167, 139, 250, 0.08);
+      color: $cor-texto;
+    }
+
+    &.ativa {
+      color: $cor-texto;
+      background: linear-gradient(135deg, rgba(167, 139, 250, 0.22), rgba(240, 164, 184, 0.15));
+      border-color: rgba(167, 139, 250, 0.55);
+
+      .painel-numerologia__aba-numero {
+        background: linear-gradient(135deg, $cor-primaria, $cor-secundaria);
+        border-color: transparent;
+        color: #fff;
+      }
     }
   }
 
-  &__acoes {
-    display: flex;
+  &__aba-numero {
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
-    margin-top: 3rem;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(167, 139, 250, 0.15);
+    border: 1px solid rgba(167, 139, 250, 0.3);
+    font-family: $fonte-titulo;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: $cor-primaria;
+    flex-shrink: 0;
+    transition: all $transicao-rapida;
+  }
+
+  &__aba-titulo {
+    flex: 1;
+  }
+
+  &__conteudo {
+    min-width: 0;
   }
 }
 
 @media (max-width: $breakpoint-mobile) {
   .painel-numerologia {
-    &__cabecalho {
-      margin-bottom: 2rem;
+    &__titulo { font-size: 1.5rem; }
+
+    &__layout {
+      grid-template-columns: 1fr;
+      gap: 1rem;
     }
 
-    &__titulo {
-      font-size: 1.6rem;
+    &__menu {
+      position: static;
+      overflow-x: auto;
+      padding-bottom: 0.4rem;
+
+      &::-webkit-scrollbar { height: 4px; }
+      &::-webkit-scrollbar-thumb {
+        background: rgba(167, 139, 250, 0.3);
+        border-radius: 4px;
+      }
     }
 
-    &__descricao {
-      font-size: 1rem;
+    &__aba {
+      flex-shrink: 0;
+      white-space: nowrap;
     }
-
-    &__lista {
-      gap: 1.5rem;
-    }
-  }
-}
-
-.painel-numerologia__titulo-linha {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.7rem;
-}
-
-.painel-numerologia__info {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-font-size: 1rem;
-border: none;
-  border-radius: 50%;
-  background: rgba(167, 139, 250, 0.15);
-  color: $cor-secundaria;
-  cursor: pointer;
-  transition: all $transicao-rapida;
-
-  &:hover {
-    background: rgba(167, 139, 250, 0.35);
-  }
-}
-
-.painel-numerologia__abas {
-  display: flex;
-  justify-content: center;
-  gap: 0.6rem;
-  margin-bottom: 2.5rem;
-  overflow-x: auto;
-  padding-bottom: 0.5rem;
-  scrollbar-width: thin;
-
-  &::-webkit-scrollbar {
-    height: 4px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: rgba(167, 139, 250, 0.3);
-    border-radius: 4px;
-  }
-}
-
-.painel-numerologia__aba {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  padding: 0.5rem 1.1rem 0.5rem 0.5rem;
-  border-radius: 50px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(167, 139, 250, 0.2);
-  color: $cor-texto-suave;
-  font-family: $fonte-titulo;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: all $transicao-rapida;
-  white-space: nowrap;
-  flex-shrink: 0;
-
-  &:hover {
-    color: $cor-texto;
-    border-color: rgba(167, 139, 250, 0.5);
-    background: rgba(167, 139, 250, 0.12);
-  }
-
-  &.ativa {
-    color: $cor-texto;
-    background: linear-gradient(45deg, rgba(167, 139, 250, 0.3), rgba(240, 164, 184, 0.3));
-    border-color: rgba(167, 139, 250, 0.6);
-    box-shadow: 0 0 15px rgba(167, 139, 250, 0.3);
-  }
-}
-
-.painel-numerologia__aba-numero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: rgba(167, 139, 250, 0.2);
-  border: 1px solid rgba(167, 139, 250, 0.4);
-  font-family: $fonte-titulo;
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: $cor-texto;
-  flex-shrink: 0;
-}
-
-.painel-numerologia__aba.ativa .painel-numerologia__aba-numero {
-  background: linear-gradient(135deg, $cor-primaria, $cor-secundaria);
-  border-color: transparent;
-  box-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
-}
-
-@media (max-width: $breakpoint-mobile) {
-  .painel-numerologia__abas {
-    justify-content: flex-start;
-    margin-bottom: 1.8rem;
-  }
-
-  .painel-numerologia__aba {
-    padding: 0.4rem 0.9rem 0.4rem 0.4rem;
-    font-size: 0.82rem;
-  }
-
-  .painel-numerologia__aba-numero {
-    width: 26px;
-    height: 26px;
-    font-size: 0.75rem;
-  }
-
-  .painel-numerologia__aba-titulo {
-    display: none;
   }
 }

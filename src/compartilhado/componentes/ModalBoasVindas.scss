@@ -11,7 +11,32 @@
   padding: 1.5rem;
   animation: aparecer 0.4s ease;
 
+  &__fechar {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    left: auto;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(167, 139, 250, 0.15);
+    border: 1px solid rgba(167, 139, 250, 0.35);
+    color: #f5f3ff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+
+    &:hover {
+      background: rgba(167, 139, 250, 0.35);
+      transform: rotate(90deg);
+    }
+  }
+
   &__caixa {
+    position: relative;
     width: 100%;
     max-width: 560px;
     max-height: 90vh;
@@ -19,7 +44,7 @@
     background: linear-gradient(135deg, rgba(20, 15, 40, 0.98), rgba(15, 10, 30, 0.98));
     border: 1px solid rgba(153, 105, 255, 0.65);
     border-radius: 24px;
-    padding: 3rem 2.5rem;
+    padding: 0 2.5rem 3rem;
     animation: deslizar-lateral 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
@@ -28,6 +53,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding-top: 3rem;
     animation: aparecer 0.4s ease;
   }
 
@@ -189,58 +215,30 @@
     background: rgba(153, 105, 255, 0.2);
     color: $cor-secundaria;
   }
-}
 
-.modal-boas-vindas__acoes {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
+  &__acoes {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
 
-.modal-boas-vindas__pular {
-  background: none;
-  border: none;
-  color: $cor-texto-suave;
-  font-family: $fonte-titulo;
-  font-size: 0.9rem;
-  cursor: pointer;
-  padding: 0.5rem 1rem;
-  border-radius: 50px;
-  transition: all $transicao-rapida;
-  opacity: 0.7;
+  &__pular {
+    background: none;
+    border: none;
+    color: $cor-texto-suave;
+    font-family: $fonte-titulo;
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    transition: all $transicao-rapida;
+    opacity: 0.7;
 
-  &:hover {
-    opacity: 1;
-    color: $cor-secundaria;
-    background: rgba(153, 105, 255, 0.1);
+    &:hover {
+      opacity: 1;
+      color: $cor-secundaria;
+      background: rgba(153, 105, 255, 0.1);
+    }
   }
 }
 
-@media (max-width: $breakpoint-mobile) {
-  .modal-boas-vindas {
-    padding: 1rem;
-
-    &__caixa {
-      padding: 2rem 1.5rem;
-    }
-
-    &__logo {
-      width: 70px;
-      height: 70px;
-      margin-bottom: 1.3rem;
-    }
-
-    &__titulo {
-      font-size: 1.4rem;
-    }
-
-    &__texto {
-      font-size: 0.95rem;
-    }
-
-    &__linha {
-      grid-template-columns: 1fr;
-      gap: 0;
-    }
-  }
-}

@@ -1,0 +1,26 @@
+﻿export interface Vela {
+  id: string;
+  nome: string;
+  cor: string;
+  elemento: "Terra" | "Água" | "Fogo" | "Ar";
+  icone: string;
+  descricao: string;
+  propriedades: string[];
+  uso: string;
+  cuidados?: string;
+}
+
+export const VELAS: Vela[] = [
+  { id: "branca", nome: "Vela Branca", cor: "Branca", elemento: "Ar", icone: "mdi:candle", descricao: "A vela branca é a mais versátil de todas. Ela representa paz, pureza e conexão espiritual, e pode substituir qualquer outra cor em rituais quando não se tem a cor específica.", propriedades: ["Paz", "Pureza", "Conexão espiritual"], uso: "Use para meditação, orações, limpeza energética ou como base para qualquer intenção.", cuidados: "Nunca deixe vela acesa sem supervisão." },
+  { id: "preta", nome: "Vela Preta", cor: "Preta", elemento: "Terra", icone: "mdi:candle", descricao: "A vela preta é a vela da proteção e do descarrego. Ela absorve energias densas e ajuda a cortar vínculos e afastar o que não serve mais.", propriedades: ["Proteção", "Descarrego", "Corte"], uso: "Use em rituais de descarrego e proteção — especialmente para afastar energias densas.", cuidados: "Não confunda com 'maldade' — a vela preta é de proteção, não de ataque." },
+  { id: "vermelha", nome: "Vela Vermelha", cor: "Vermelha", elemento: "Fogo", icone: "mdi:candle", descricao: "A vela vermelha é a vela da paixão, da força e da vitalidade. Ela ajuda a despertar energia, coragem e desejo.", propriedades: ["Paixão", "Força", "Vitalidade"], uso: "Use em rituais de amor intenso, coragem e energia física.", cuidados: "Evite uso em excesso — pode gerar conflitos." },
+  { id: "rosa", nome: "Vela Rosa", cor: "Rosa", elemento: "Água", icone: "mdi:candle", descricao: "A vela rosa é a vela do amor e da autoestima. Ela ajuda a atrair amor, harmonizar relações e fortalecer o amor-próprio.", propriedades: ["Amor", "Autoestima", "Harmonia"], uso: "Use em rituais de amor, autoestima e harmonização de relações.", cuidados: "Nunca deixe vela acesa sem supervisão." },
+  { id: "laranja", nome: "Vela Laranja", cor: "Laranja", elemento: "Fogo", icone: "mdi:candle", descricao: "A vela laranja é a vela da criatividade e da motivação. Ela ajuda a despertar a criatividade e a superar bloqueios.", propriedades: ["Criatividade", "Motivação", "Energia"], uso: "Use em rituais de criatividade, motivação e superação de bloqueios.", cuidados: "Nunca deixe vela acesa sem supervisão." },
+  { id: "amarela", nome: "Vela Amarela", cor: "Amarela", elemento: "Fogo", icone: "mdi:candle", descricao: "A vela amarela é a vela da prosperidade e da clareza. Ela ajuda a atrair dinheiro, resolver problemas e clarear a mente.", propriedades: ["Prosperidade", "Clareza", "Foco"], uso: "Use em rituais de prosperidade, estudos e clareza mental.", cuidados: "Nunca deixe vela acesa sem supervisão." },
+  { id: "verde", nome: "Vela Verde", cor: "Verde", elemento: "Terra", icone: "mdi:candle", descricao: "A vela verde é a vela da prosperidade e da cura. Ela ajuda a atrair dinheiro, curar o corpo e harmonizar a saúde.", propriedades: ["Prosperidade", "Cura", "Esperança"], uso: "Use em rituais de prosperidade, cura e saúde.", cuidados: "Nunca deixe vela acesa sem supervisão." },
+  { id: "azul", nome: "Vela Azul", cor: "Azul", elemento: "Água", icone: "mdi:candle", descricao: "A vela azul é a vela da paz e da comunicação. Ela ajuda a acalmar a mente, melhorar a comunicação e trazer serenidade.", propriedades: ["Paz", "Comunicação", "Serenidade"], uso: "Use em rituais de paz, comunicação e acalmar a mente.", cuidados: "Nunca deixe vela acesa sem supervisão." },
+  { id: "indigo", nome: "Vela Índigo", cor: "Índigo", elemento: "Água", icone: "mdi:candle", descricao: "A vela índigo é a vela da intuição e da espiritualidade. Ela ajuda a despertar a intuição e a conexão com o mundo espiritual.", propriedades: ["Intuição", "Espiritualidade", "Clareza"], uso: "Use em rituais de intuição, meditação e conexão espiritual.", cuidados: "Nunca deixe vela acesa sem supervisão." },
+  { id: "violeta", nome: "Vela Violeta", cor: "Violeta", elemento: "Ar", icone: "mdi:candle", descricao: "A vela violeta é a vela da transformação e da espiritualidade. Ela ajuda a transmutar energias densas e a elevar a vibração.", propriedades: ["Transformação", "Espiritualidade", "Transmutação"], uso: "Use em rituais de transformação, transmutação e elevação espiritual.", cuidados: "Nunca deixe vela acesa sem supervisão." },
+  { id: "marrom", nome: "Vela Marrom", cor: "Marrom", elemento: "Terra", icone: "mdi:candle", descricao: "A vela marrom é a vela da estabilidade e do aterramento. Ela ajuda a manter os pés no chão e a resolver questões práticas.", propriedades: ["Estabilidade", "Aterramento", "Praticidade"], uso: "Use em rituais de estabilidade, aterramento e resolução de questões práticas.", cuidados: "Nunca deixe vela acesa sem supervisão." },
+  { id: "dourada", nome: "Vela Dourada", cor: "Dourada", elemento: "Fogo", icone: "mdi:candle", descricao: "A vela dourada é a vela da prosperidade e do poder. Ela ajuda a atrair abundância, reconhecimento e sucesso material.", propriedades: ["Prosperidade", "Poder", "Sucesso"], uso: "Use em rituais de prosperidade, sucesso e reconhecimento.", cuidados: "Nunca deixe vela acesa sem supervisão." },
+];

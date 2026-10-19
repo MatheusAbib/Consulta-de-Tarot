@@ -21,7 +21,7 @@ const TABELA_PITAGORICA: Record<string, number> = {
 
 const VOGAIS = new Set(["A", "E", "I", "O", "U"]);
 
-function reduzir(numero: number): number {
+export function reduzir(numero: number): number {
   while (numero > 9 && numero !== 11 && numero !== 22 && numero !== 33) {
     numero = String(numero)
       .split("")

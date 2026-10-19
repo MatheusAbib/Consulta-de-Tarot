@@ -42,7 +42,6 @@ export function ModalSignos({ aberto, aoFechar }: Props) {
         <button type="button" className="modal-signos__fechar" onClick={aoFechar} aria-label="Fechar">
           <i className="fa-solid fa-xmark" />
         </button>
-
         <h2 className="modal-signos__titulo">Os Doze Signos</h2>
 
         <p className="modal-signos__texto">
@@ -84,3 +83,8 @@ export function ModalSignos({ aberto, aoFechar }: Props) {
     </div>
   );
 }
+
+
+
+
+

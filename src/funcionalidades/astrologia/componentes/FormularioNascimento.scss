@@ -137,17 +137,3 @@
   }
 }
 
-@media (max-width: $breakpoint-mobile) {
-  .formulario-nascimento {
-    padding: 1.8rem;
-
-    &__titulo {
-      font-size: 1.4rem;
-    }
-
-    &__linha {
-      grid-template-columns: 1fr;
-      gap: 0;
-    }
-  }
-}

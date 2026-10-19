@@ -1,0 +1,1108 @@
+﻿@use "./variaveis" as *;
+
+@media (max-width: $breakpoint-mobile) {
+  .secao {
+    padding: 7rem 1rem 2rem;
+    min-height: auto;
+    align-items: flex-start;
+  }
+
+  .conteudo-secao {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .pagina-inicio__titulo {
+    display: none;
+  }
+
+  .titulo-secao {
+    font-size: 2rem;
+    letter-spacing: -1px;
+    margin-bottom: 1rem;
+  }
+
+  .descricao-secao {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 0 0.5rem;
+  }
+
+  .barra-navegacao {
+    padding: 1rem 3%;
+
+    &.rolado {
+      padding: 0.6rem 4%;
+    }
+
+    &__logo {
+      font-size: 1.5rem;
+    }
+
+    &__contato {
+      padding: 0.6rem;
+      border-radius: 50%;
+
+      span {
+        display: none;
+      }
+    }
+  }
+
+  .botao-perfil {
+    padding: 0.5rem 0.8rem;
+    border-radius: 50%;
+
+    span {
+      display: none;
+    }
+  }
+
+  .abas-inline {
+    margin: 1.5rem 0;
+
+    &__lista {
+      overflow-x: auto;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    &__item {
+      padding: 0.6rem 1rem;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    &__icone {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  .pagina-inicio {
+    padding: 22% 2% 0 !important;
+  }
+
+  .painel-inicio {
+    &__grade {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    &__cartao {
+      padding: 1.4rem;
+    }
+
+    &__cartao-icone {
+      width: 38px;
+      height: 38px;
+    }
+
+    &__cartao-titulo {
+      font-size: 1.1rem;
+    }
+
+    &__cartao-texto {
+      font-size: 0.9rem;
+    }
+  }
+
+  .rodape {
+    padding: 2rem 1rem;
+
+    &__conteudo {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    &__coluna h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+
+    &__coluna p {
+      margin-bottom: 0;
+      font-size: 0.9rem;
+    }
+
+    &__sociais {
+      justify-content: center;
+    }
+
+    &__links a::before {
+      display: none;
+    }
+
+    &__links a:hover {
+      padding-left: 0;
+    }
+
+    &__base {
+      margin-top: 0.8rem;
+      font-size: 0.8rem;
+    }
+  }
+
+  .cartao-vidro {
+    padding: 1rem;
+    border-radius: 16px;
+  }
+
+  .modal-boas-vindas {
+    padding: 0.5rem;
+
+    &__caixa {
+      padding: 2rem 1rem;
+      max-height: 95vh;
+    }
+
+    &__logo {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 1rem;
+    }
+
+    &__titulo {
+      font-size: 1.3rem;
+    }
+
+    &__texto {
+      font-size: 0.92rem;
+    }
+
+    &__linha {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    &__acoes {
+      flex-direction: column-reverse;
+      gap: 0.5rem;
+    }
+  }
+
+  .campo-pergunta {
+    padding: 1.5rem 1.2rem;
+
+    &__titulo {
+      font-size: 1.3rem;
+    }
+
+    &__descricao {
+      font-size: 0.9rem;
+    }
+
+    &__acoes {
+      flex-direction: column-reverse;
+      align-items: stretch;
+      gap: 0.5rem;
+    }
+
+    &__cancelar {
+      text-align: center;
+    }
+  }
+
+  .seletor-tiragem {
+    &__titulo {
+      font-size: 1.5rem;
+    }
+
+    &__subtitulo {
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+
+    &__grade {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    &__cartao {
+      padding: 1.5rem;
+    }
+
+    &__icone {
+      font-size: 2.2rem;
+    }
+
+    &__nome {
+      font-size: 1.2rem;
+    }
+
+    &__descricao {
+      font-size: 0.9rem;
+    }
+  }
+
+  .mesa-leque {
+    padding: 1rem 0;
+
+    &__palco {
+      height: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.6rem;
+      max-width: 100%;
+      perspective: none;
+      padding: 0 0.5rem;
+    }
+
+    &__carta {
+      position: static;
+      width: 100%;
+      transform: none !important;
+    }
+
+    &__escolhidas {
+      gap: 0.6rem;
+      margin-top: 1.5rem;
+      padding: 0 0.5rem;
+    }
+
+    &__escolhida {
+      width: 90px;
+      padding: 0.6rem;
+    }
+
+    &__escolhida-posicao {
+      font-size: 0.7rem;
+    }
+
+    &__instrucao {
+      font-size: 0.85rem;
+      padding: 0.6rem 1rem;
+      margin-top: 1.5rem;
+    }
+  }
+
+  .mesa-cartas {
+    &__instrucao {
+      margin-bottom: 1.5rem;
+    }
+
+    &__instrucao-titulo {
+      font-size: 1rem;
+    }
+
+    &__instrucao-descricao {
+      font-size: 0.85rem;
+    }
+
+    &__campo {
+      gap: 0.6rem;
+    }
+
+    &__campo.mesa-cartas--uma {
+      grid-template-columns: 1fr;
+      max-width: 200px;
+    }
+
+    &__campo.mesa-cartas--tres {
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 100%;
+      gap: 0.5rem;
+    }
+
+    .mesa-cartas__campo.mesa-cartas--cruz {
+      display: grid !important;
+      position: static !important;
+      height: auto !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 0.5rem !important;
+      padding: 0.5rem !important;
+      overflow: visible !important;
+    }
+
+    .mesa-cartas__campo.mesa-cartas--cruz .mesa-cartas__slot {
+      position: static !important;
+      width: 100% !important;
+      left: auto !important;
+      top: auto !important;
+      transform: none !important;
+      display: flex !important;
+      justify-content: center !important;
+    }
+
+    .mesa-cartas__campo.mesa-cartas--cruz .mesa-cartas__slot > * {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+
+    .mesa-cartas__campo.mesa-cartas--cruz .mesa-cartas__slot--2 {
+      transform: none !important;
+    }
+  }
+
+  .mesa-cartas__baralho {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.4rem;
+    padding: 0.8rem;
+    margin-top: 1.5rem;
+  }
+
+  .mensagem-revelada {
+    &__titulo {
+      font-size: 1.4rem;
+    }
+
+    &__subtitulo {
+      font-size: 0.9rem;
+    }
+
+    &__lista {
+      gap: 1rem;
+    }
+
+    &__item {
+      padding: 1.2rem;
+    }
+
+    &__item-cabecalho {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.3rem;
+      padding-bottom: 0.8rem;
+      margin-bottom: 1rem;
+    }
+
+    &__posicao-descricao {
+      text-align: left;
+      font-size: 0.85rem;
+    }
+
+    &__carta-titulo {
+      font-size: 1.2rem;
+    }
+
+    &__carta-fortuna {
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    &__paragrafo {
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    &__contexto {
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    &__contexto-texto {
+      font-size: 0.95rem;
+    }
+
+    &__acoes {
+      gap: 0.8rem;
+    }
+
+    &__aviso {
+      font-size: 0.8rem;
+      text-align: center;
+    }
+  }
+
+  .painel-astrologia {
+    &__cabecalho {
+      margin-bottom: 1.5rem;
+    }
+
+    &__titulo {
+      font-size: 1.5rem;
+    }
+
+    &__descricao {
+      font-size: 0.95rem;
+    }
+  }
+
+  .formulario-nascimento {
+    padding: 1.5rem 1.2rem;
+
+    &__titulo {
+      font-size: 1.3rem;
+    }
+
+    &__subtitulo {
+      font-size: 0.9rem;
+    }
+
+    &__linha {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+  }
+
+  .mapa-astral {
+    max-width: 100%;
+    margin: 1rem auto;
+
+    &__planeta {
+      width: 24px;
+      height: 24px;
+
+      svg {
+        width: 12px;
+        height: 12px;
+      }
+    }
+
+    &__signo svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    &__planeta-grau {
+      font-size: 0.55rem;
+    }
+  }
+
+  .resumo-planetas {
+    margin: 2rem auto 0;
+
+    &__titulo {
+      font-size: 1.2rem;
+      margin-bottom: 1.2rem;
+    }
+
+    &__destaques {
+      grid-template-columns: 1fr;
+      gap: 0.8rem;
+      margin-bottom: 1.2rem;
+    }
+
+    &__destaque {
+      padding: 1rem;
+    }
+
+    &__lista {
+      gap: 0.4rem;
+    }
+
+    &__item {
+      padding: 0.6rem 0.8rem;
+    }
+
+    &__item-planeta {
+      font-size: 0.85rem;
+      gap: 0.5rem;
+    }
+
+    &__item-signo {
+      font-size: 0.8rem;
+      min-width: auto;
+    }
+
+    &__item-grau {
+      font-size: 0.75rem;
+      min-width: auto;
+    }
+  }
+
+  .interpretacoes {
+    margin: 2rem auto 0;
+
+    &__cabecalho {
+      margin-bottom: 1.5rem;
+    }
+
+    &__titulo {
+      font-size: 1.3rem;
+    }
+
+    &__subtitulo {
+      font-size: 0.9rem;
+    }
+
+    &__abas {
+      flex-direction: column;
+      margin-bottom: 1.5rem;
+      gap: 0.4rem;
+    }
+
+    &__aba {
+      padding: 0.5rem 0.9rem;
+      font-size: 0.8rem;
+      width: 100%;
+      justify-content: flex-start;
+    }
+
+    &__cartao {
+      padding: 1.2rem;
+    }
+
+    &__cartao-cabecalho {
+      gap: 0.8rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.8rem;
+    }
+
+    &__cartao-planeta {
+      font-size: 1rem;
+    }
+
+    &__cartao-signo {
+      font-size: 0.85rem;
+    }
+
+    &__cartao-subtitulo {
+      font-size: 1rem;
+    }
+
+    &__cartao-descricao {
+      font-size: 0.85rem;
+    }
+
+    &__secao-cabecalho {
+      padding: 0.8rem 1rem;
+    }
+
+    &__secao-titulo {
+      font-size: 0.85rem;
+    }
+
+    &__secao-corpo {
+      padding: 0 1rem 1rem;
+    }
+
+    &__paragrafo {
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+  }
+
+  .painel-numerologia {
+    &__cabecalho {
+      margin-bottom: 1.5rem;
+    }
+
+    &__titulo {
+      font-size: 1.5rem;
+    }
+
+    &__descricao {
+      font-size: 0.95rem;
+    }
+
+    &__lista {
+      gap: 1rem;
+    }
+  }
+
+  .painel-numerologia__abas {
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+    gap: 0.4rem;
+  }
+
+  .painel-numerologia__aba {
+    padding: 0.4rem 0.8rem 0.4rem 0.4rem;
+    font-size: 0.8rem;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .painel-numerologia__aba-numero {
+    width: 24px;
+    height: 24px;
+    font-size: 0.7rem;
+  }
+
+  .mandala-numeros {
+    max-width: 100%;
+    margin: 1rem auto 2rem;
+
+    &__no {
+      width: 56px;
+      height: 56px;
+
+      i {
+        font-size: 0.65rem;
+      }
+
+      &--centro {
+        width: 68px;
+        height: 68px;
+
+        .mandala-numeros__valor {
+          font-size: 1.2rem;
+        }
+
+        .mandala-numeros__rotulo {
+          font-size: 0.55rem;
+        }
+      }
+    }
+
+    &__valor {
+      font-size: 1rem;
+    }
+
+    &__rotulo {
+      font-size: 0.45rem;
+      letter-spacing: 0;
+    }
+  }
+
+  .formulario-nome {
+    padding: 1.5rem 1.2rem;
+
+    &__titulo {
+      font-size: 1.3rem;
+    }
+  }
+
+  .resultado-numero {
+    padding: 1.2rem;
+
+    &__cabecalho {
+      gap: 0.8rem;
+      margin-bottom: 1.2rem;
+      padding-bottom: 1rem;
+    }
+
+    &__circulo {
+      width: 55px;
+      height: 55px;
+    }
+
+    &__valor {
+      font-size: 1.4rem;
+    }
+
+    &__titulo {
+      font-size: 1.1rem;
+    }
+
+    &__contexto {
+      font-size: 0.8rem;
+    }
+
+    &__subtitulo-numero {
+      font-size: 1rem;
+    }
+
+    &__descricao-curta {
+      font-size: 0.85rem;
+      margin-bottom: 1.2rem;
+    }
+
+    &__secao-cabecalho {
+      padding: 0.8rem 1rem;
+    }
+
+    &__secao-titulo {
+      font-size: 0.88rem;
+    }
+
+    &__secao-corpo {
+      padding: 0 1rem 1rem;
+    }
+
+    &__paragrafo {
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+  }
+
+  .modal-como-funciona {
+    padding: 0.8rem;
+
+    &__caixa {
+      padding: 1.5rem 1rem;
+      border-radius: 16px;
+    }
+
+    &__titulo {
+      font-size: 1.2rem;
+    }
+
+    &__subtitulo {
+      font-size: 0.95rem;
+    }
+
+    &__texto,
+    &__lista li {
+      font-size: 0.85rem;
+    }
+
+    &__celula {
+      font-size: 0.65rem;
+      padding: 0.2rem;
+    }
+
+    &__numero-destaque {
+      width: 34px;
+      height: 34px;
+      font-size: 0.9rem;
+    }
+  }
+
+  .painel-matriz-destino {
+    &__cabecalho {
+      margin-bottom: 1.5rem;
+    }
+
+    &__titulo {
+      font-size: 1.5rem;
+    }
+
+    &__descricao {
+      font-size: 0.95rem;
+    }
+  }
+
+  .diagrama-matriz {
+    margin: 1rem auto;
+
+    &__detalhe {
+      padding: 1.2rem;
+    }
+
+    &__detalhe-numero {
+      width: 45px;
+      height: 45px;
+      font-size: 1.2rem;
+    }
+
+    &__detalhe-titulo {
+      font-size: 1.1rem;
+    }
+
+    &__destaque {
+      padding: 0.9rem 1rem;
+    }
+
+    &__destaque-titulo {
+      font-size: 1rem;
+    }
+
+    &__destaque-subtitulo {
+      font-size: 0.85rem;
+    }
+
+    &__paragrafo {
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    &__instrucao {
+      font-size: 0.85rem;
+    }
+  }
+
+  .modal-matriz {
+    padding: 0.5rem;
+
+    &__caixa {
+      padding: 1.5rem 1rem;
+      border-radius: 16px;
+    }
+
+    &__titulo {
+      font-size: 1.2rem;
+    }
+
+    &__subtitulo {
+      font-size: 0.95rem;
+    }
+
+    &__texto {
+      font-size: 0.85rem;
+    }
+
+    &__item {
+      padding: 0.7rem 0.8rem;
+      gap: 0.6rem;
+    }
+
+    &__item-letra {
+      width: 28px;
+      height: 28px;
+      font-size: 0.8rem;
+    }
+
+    &__item-nome {
+      font-size: 0.85rem;
+    }
+
+    &__item-descricao {
+      font-size: 0.78rem;
+    }
+  }
+
+  .painel-signos {
+    &__cabecalho {
+      margin-bottom: 1.5rem;
+    }
+
+    &__titulo {
+      font-size: 1.5rem;
+    }
+
+    &__descricao {
+      font-size: 0.95rem;
+    }
+
+    &__grade {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    &__descobrir {
+      padding: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    &__descobrir-campos {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.6rem;
+    }
+
+    &__descobrir-input {
+      max-width: 100%;
+    }
+  }
+
+  .card-signo {
+    padding: 1rem 0.6rem;
+
+    &__simbolo {
+      margin-bottom: 0.5rem;
+    }
+
+    &__nome {
+      font-size: 0.95rem;
+    }
+
+    &__elemento {
+      font-size: 0.75rem;
+    }
+
+    &__datas {
+      font-size: 0.7rem;
+    }
+  }
+
+  .detalhe-signo {
+    padding: 1.2rem;
+
+    &__cabecalho {
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+      padding-bottom: 1.2rem;
+    }
+
+    &__nome {
+      font-size: 1.4rem;
+    }
+
+    &__descricao {
+      font-size: 0.92rem;
+    }
+
+    &__tags {
+      justify-content: center;
+      gap: 0.4rem;
+    }
+
+    &__tag {
+      font-size: 0.75rem;
+      padding: 0.3rem 0.7rem;
+    }
+
+    &__resumo {
+      padding: 0.9rem 1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    &__resumo-texto {
+      font-size: 0.88rem;
+    }
+
+    &__secao-cabecalho {
+      padding: 0.8rem 1rem;
+    }
+
+    &__secao-titulo {
+      font-size: 0.88rem;
+    }
+
+    &__secao-corpo {
+      padding: 0 1rem 1rem;
+    }
+
+    &__paragrafo {
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    &__lista li {
+      font-size: 0.88rem;
+    }
+  }
+
+  .modal-signos {
+    padding: 0.5rem;
+
+    &__caixa {
+      padding: 1.5rem 1rem;
+    }
+
+    &__titulo {
+      font-size: 1.2rem;
+    }
+
+    &__subtitulo {
+      font-size: 0.95rem;
+    }
+
+    &__texto {
+      font-size: 0.85rem;
+    }
+
+    &__item {
+      padding: 0.7rem 0.8rem;
+    }
+
+    &__item-titulo {
+      font-size: 0.9rem;
+    }
+
+    &__item-descricao {
+      font-size: 0.82rem;
+    }
+  }
+
+  .Toastify__toast-container {
+    padding: 0.8rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .Toastify__toast {
+    font-size: 0.9rem !important;
+    border-radius: 12px !important;
+  }
+}
+
+@media (max-width: $breakpoint-pequeno) {
+  .titulo-secao {
+    font-size: 1.6rem;
+    letter-spacing: -0.5px;
+  }
+
+  .abas-inline__item {
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+  }
+
+  .mesa-leque__palco {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.4rem;
+  }
+
+  .mesa-cartas__campo.mesa-cartas--tres {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 300px;
+  }
+
+  .mesa-cartas__campo.mesa-cartas--cruz {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .mesa-cartas__baralho {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.3rem;
+  }
+
+  .painel-signos__grade {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .card-signo__nome {
+    font-size: 0.85rem;
+  }
+
+  .painel-numerologia__aba {
+    padding: 0.35rem 0.7rem 0.35rem 0.35rem;
+    font-size: 0.75rem;
+  }
+
+  .painel-numerologia__aba-numero {
+    width: 22px;
+    height: 22px;
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .card,
+  .seletor-tiragem__cartao,
+  .painel-inicio__cartao,
+  .card-signo,
+  .servico-card,
+  .cartao-vidro,
+  .botao-mistico,
+  .abas-inline__item,
+  .interpretacoes__aba,
+  .painel-numerologia__aba,
+  .seletor-tiragem__acao,
+  .mensagem-revelada__item,
+  .resultado-numero,
+  .barra-navegacao__contato,
+  .botao-perfil,
+  .rodape__sociais a,
+  .rodape__links a,
+  .mobile-nav-toggle,
+  .mesa-leque__carta,
+  .mesa-cartas__voltar {
+    -webkit-tap-highlight-color: transparent;
+    transition: none !important;
+  }
+
+  .card:hover,
+  .seletor-tiragem__cartao:hover,
+  .painel-inicio__cartao:hover,
+  .card-signo:hover,
+  .servico-card:hover,
+  .cartao-vidro:hover,
+  .botao-mistico:hover,
+  .abas-inline__item:hover,
+  .interpretacoes__aba:hover,
+  .painel-numerologia__aba:hover,
+  .seletor-tiragem__acao:hover,
+  .mensagem-revelada__item:hover,
+  .resultado-numero:hover,
+  .barra-navegacao__contato:hover,
+  .botao-perfil:hover,
+  .rodape__sociais a:hover,
+  .rodape__links a:hover,
+  .mobile-nav-toggle:hover,
+  .mesa-leque__carta:hover,
+  .mesa-cartas__voltar:hover,
+  .diagrama-matriz__ponto:hover circle {
+    transform: none !important;
+    filter: none !important;
+    box-shadow: none !important;
+    background: inherit !important;
+    border-color: inherit !important;
+    color: inherit !important;
+    text-shadow: none !important;
+  }
+}
+
+

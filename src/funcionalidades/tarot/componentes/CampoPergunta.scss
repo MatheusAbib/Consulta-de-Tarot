@@ -1,0 +1,131 @@
+﻿@use "../../../estilos/variaveis" as *;
+
+.campo-pergunta {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2.5rem;
+  border-radius: 20px;
+  background: rgba(40, 32, 70, 0.65);
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  backdrop-filter: blur(8px);
+  animation: aparecer 0.5s ease;
+
+  &__cabecalho {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    background: rgba(167, 139, 250, 0.15);
+    border: 1px solid rgba(167, 139, 250, 0.35);
+    font-family: $fonte-titulo;
+    font-size: 0.85rem;
+    color: $cor-secundaria;
+    margin-bottom: 1.2rem;
+
+    i {
+      font-size: 0.75rem;
+    }
+  }
+
+  &__titulo {
+    font-family: $fonte-titulo;
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+    background: $gradiente-primario;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__descricao {
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.85;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  &__campo {
+    position: relative;
+    margin-bottom: 1.5rem;
+  }
+
+  &__label {
+    display: block;
+    font-family: $fonte-titulo;
+    font-size: 0.95rem;
+    color: $cor-texto-suave;
+    margin-bottom: 0.6rem;
+  }
+
+  &__textarea {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(167, 139, 250, 0.3);
+    border-radius: 12px;
+    color: $cor-texto;
+    font-family: $fonte-corpo;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    resize: vertical;
+    min-height: 100px;
+    transition: all $transicao-rapida;
+
+    &:focus {
+      outline: none;
+      border-color: $cor-primaria;
+      background: rgba(167, 139, 250, 0.08);
+      box-shadow: 0 0 15px rgba(167, 139, 250, 0.25);
+    }
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.4);
+      font-style: italic;
+    }
+  }
+
+  &__contador {
+    position: absolute;
+    bottom: -1.3rem;
+    right: 0;
+    font-size: 0.75rem;
+    color: $cor-texto-apagado;
+    opacity: 0.6;
+    font-family: $fonte-mono;
+  }
+
+  &__acoes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  &__cancelar {
+    background: none;
+    border: none;
+    color: $cor-texto-suave;
+    font-family: $fonte-titulo;
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    transition: all $transicao-rapida;
+    opacity: 0.7;
+
+    &:hover {
+      opacity: 1;
+      color: $cor-secundaria;
+      background: rgba(167, 139, 250, 0.1);
+    }
+  }
+}
+

@@ -1,0 +1,27 @@
+﻿@use "../../../estilos/variaveis" as *;
+
+.icone-naipe {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &--espadas {
+    color: #93c5fd;
+    filter: drop-shadow(0 0 6px rgba(147, 197, 253, 0.5));
+  }
+
+  &--copas {
+    color: #f0a4b8;
+    filter: drop-shadow(0 0 6px rgba(240, 164, 184, 0.5));
+  }
+
+  &--ouros {
+    color: #86efac;
+    filter: drop-shadow(0 0 6px rgba(134, 239, 172, 0.5));
+  }
+
+  &--paus {
+    color: #fb923c;
+    filter: drop-shadow(0 0 6px rgba(251, 146, 60, 0.5));
+  }
+}

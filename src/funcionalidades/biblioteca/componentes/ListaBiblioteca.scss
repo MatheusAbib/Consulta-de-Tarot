@@ -1,0 +1,174 @@
+﻿@use "../../../estilos/variaveis" as *;
+
+.lista-biblioteca {
+  &__cabecalho {
+    text-align: center;
+    margin-bottom: 1.2rem;
+  }
+
+  &__titulo {
+    font-family: $fonte-titulo;
+    font-size: 1.5rem;
+    color: $cor-primaria;
+    letter-spacing: 0.04em;
+  }
+
+  &__subtitulo {
+    margin-top: 0.3rem;
+    color: $cor-texto-suave;
+    font-size: 0.88rem;
+    opacity: 0.8;
+  }
+
+  &__contagem {
+    display: inline-block;
+    margin-top: 0.6rem;
+    padding: 0.2rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: rgba(167, 139, 250, 0.12);
+    border: 1px solid rgba(167, 139, 250, 0.3);
+    color: $cor-secundaria;
+  }
+
+  &__busca {
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto 1.4rem;
+
+    i {
+      position: absolute;
+      left: 1rem;
+      color: $cor-primaria;
+      opacity: 0.7;
+      font-size: 0.9rem;
+      pointer-events: none;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.7rem 2.4rem 0.7rem 2.6rem;
+      border-radius: 50px;
+      background: rgba(40, 32, 70, 0.6);
+      border: 1px solid rgba(167, 139, 250, 0.3);
+      color: $cor-texto-suave;
+      font-size: 0.9rem;
+      font-family: inherit;
+      outline: none;
+      transition: all $transicao-rapida;
+
+      &:focus {
+        border-color: $cor-primaria;
+        background: rgba(40, 32, 70, 0.8);
+      }
+
+      &::placeholder {
+        color: $cor-texto-suave;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &__busca-limpar {
+    position: absolute;
+    right: 0.7rem;
+    background: none;
+    border: none;
+    color: $cor-texto-suave;
+    font-size: 1.2rem;
+    line-height: 1;
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all $transicao-rapida;
+
+    &:hover {
+      background: rgba(167, 139, 250, 0.15);
+      color: $cor-secundaria;
+    }
+  }
+
+  &__vazio {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: $cor-texto-suave;
+    opacity: 0.7;
+    font-style: italic;
+  }
+
+  &__grade {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+
+  &__paginacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 2rem;
+  }
+
+  &__pag-btn {
+    min-width: 36px;
+    height: 36px;
+    padding: 0 0.6rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(167, 139, 250, 0.2);
+    color: $cor-texto-suave;
+    font-family: $fonte-titulo;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all $transicao-rapida;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover:not(:disabled):not(.ativa) {
+      border-color: rgba(167, 139, 250, 0.5);
+      background: rgba(167, 139, 250, 0.08);
+    }
+
+    &.ativa {
+      background: $gradiente-primario;
+      border-color: transparent;
+      color: #fff;
+      font-weight: 700;
+      cursor: default;
+    }
+
+    &:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+  }
+
+  &__pag-ellipsis {
+    padding: 0 0.3rem;
+    color: $cor-texto-suave;
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .lista-biblioteca__grade {
+    grid-template-columns: 1fr;
+  }
+
+  .lista-biblioteca__pag-btn {
+    min-width: 32px;
+    height: 32px;
+    font-size: 0.78rem;
+  }
+}

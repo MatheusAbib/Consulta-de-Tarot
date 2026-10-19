@@ -1,5 +1,5 @@
 ﻿import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+
 import { BotaoPerfil } from "./BotaoPerfil";
 import "./BarraNavegacao.scss";
 
@@ -17,11 +17,16 @@ export function BarraNavegacao() {
   return (
     <nav className={`barra-navegacao ${rolado ? "rolado" : ""}`}>
       <div className="barra-navegacao__container">
-        <Link to="/" className="barra-navegacao__logo">
+        <button
+          type="button"
+          className="barra-navegacao__logo"
+          onClick={() => window.dispatchEvent(new CustomEvent("oraculvm:ir-inicio"))}
+        >
           ORACULVM
-        </Link>
+        </button>
         <BotaoPerfil />
       </div>
     </nav>
   );
 }
+

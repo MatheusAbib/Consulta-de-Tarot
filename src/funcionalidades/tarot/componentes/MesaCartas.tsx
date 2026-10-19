@@ -4,6 +4,7 @@ import { MesaLeque } from "./MesaLeque";
 import "./MesaCartas.scss";
 
 interface Props {
+  aoVoltar?: () => void;
   tiragem: Tiragem;
   cartasDisponiveis: Carta[];
   leitura: Leitura;
@@ -12,6 +13,7 @@ interface Props {
 }
 
 export function MesaCartas({
+  aoVoltar,
   tiragem,
   cartasDisponiveis,
   leitura,
@@ -25,6 +27,16 @@ export function MesaCartas({
   if (tiragem.id === "uma-carta" || tiragem.id === "tres-cartas") {
     return (
       <div className="mesa-cartas">
+      {aoVoltar && (
+        <button
+          type="button"
+          className="mesa-cartas__voltar"
+          onClick={aoVoltar}
+        >
+          <i className="fa-solid fa-arrow-left" /> Voltar às tiragens
+        </button>
+      )}
+
         <div className="mesa-cartas__instrucao">
           {completa ? (
             <span className="mesa-cartas__instrucao-titulo">
@@ -62,6 +74,16 @@ export function MesaCartas({
 
     return (
       <div className="mesa-cartas">
+      {aoVoltar && (
+        <button
+          type="button"
+          className="mesa-cartas__voltar"
+          onClick={aoVoltar}
+        >
+          <i className="fa-solid fa-arrow-left" /> Voltar às tiragens
+        </button>
+      )}
+
         <div className="mesa-cartas__instrucao">
           {completa ? (
             <span className="mesa-cartas__instrucao-titulo">
@@ -124,3 +146,5 @@ export function MesaCartas({
 
   return null;
 }
+
+

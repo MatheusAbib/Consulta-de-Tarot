@@ -201,27 +201,3 @@
   }
 }
 
-@media (max-width: $breakpoint-mobile) {
-  .detalhe-signo {
-    padding: 1.5rem;
-
-    &__cabecalho {
-      flex-direction: column;
-      text-align: center;
-      gap: 1.2rem;
-      margin-bottom: 1.5rem;
-      padding-bottom: 1.5rem;
-    }
-
-    &__nome { font-size: 1.6rem; }
-    &__descricao { font-size: 1rem; }
-    &__tags { justify-content: center; }
-    &__resumo { padding: 1rem 1.1rem; margin-bottom: 1.5rem; }
-    &__resumo-texto { font-size: 0.92rem; }
-    &__secao-cabecalho { padding: 0.9rem 1rem; }
-    &__secao-titulo { font-size: 0.92rem; }
-    &__secao-corpo { padding: 0 1rem 1rem; }
-    &__paragrafo { font-size: 0.95rem; }
-    &__lista li { font-size: 0.92rem; }
-  }
-}

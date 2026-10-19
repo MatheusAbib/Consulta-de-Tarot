@@ -140,3 +140,12 @@
     font-size: 0.75rem;
   }
 }
+
+.carta-tarot__verso-naipe {
+  position: absolute;
+  bottom: 0.6rem;
+  right: 0.6rem;
+  z-index: 2;
+  opacity: 0.85;
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.5));
+}

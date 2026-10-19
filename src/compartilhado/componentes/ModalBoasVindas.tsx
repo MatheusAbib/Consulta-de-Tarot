@@ -27,7 +27,7 @@ const APRESENTACAO = [
 ];
 
 export function ModalBoasVindas() {
-  const { modalAberto, atualizarPerfil, perfil, completo } = usePerfil();
+  const { modalAberto, atualizarPerfil, perfil, completo, fecharModal } = usePerfil();
   const [etapa, setEtapa] = useState<Etapa>("apresentacao");
   const [indice, setIndice] = useState(0);
 
@@ -39,6 +39,13 @@ export function ModalBoasVindas() {
   const [api, setApi] = useState<ApiMunicipios | null>(null);
   const [aberto, setAberto] = useState(false);
 
+  const [originais, setOriginais] = useState({
+    nome: "",
+    data: "",
+    hora: "",
+    cidade: "",
+  });
+
   useEffect(() => {
     carregarMunicipios().then(setApi).catch(() => setApi(null));
   }, []);
@@ -47,16 +54,23 @@ export function ModalBoasVindas() {
     if (!modalAberto) return;
 
     if (completo && perfil) {
+      const cidadeStr = `${perfil.cidadeNome} - ${perfil.cidadeUf}`;
       setEtapa("formulario");
       setNome(perfil.nome);
       setData(perfil.dataNascimento);
       setHora(perfil.horaNascimento);
-      setBuscaCidade(`${perfil.cidadeNome} - ${perfil.cidadeUf}`);
+      setBuscaCidade(cidadeStr);
       setCidadeSelecionada({
         nome: perfil.cidadeNome,
         uf: perfil.cidadeUf,
         codigoIbge: 0,
       } as Municipio);
+      setOriginais({
+        nome: perfil.nome,
+        data: perfil.dataNascimento,
+        hora: perfil.horaNascimento,
+        cidade: cidadeStr,
+      });
     } else {
       setEtapa("apresentacao");
       setIndice(0);
@@ -65,6 +79,7 @@ export function ModalBoasVindas() {
       setHora("");
       setBuscaCidade("");
       setCidadeSelecionada(null);
+      setOriginais({ nome: "", data: "", hora: "", cidade: "" });
     }
   }, [modalAberto, completo, perfil]);
 
@@ -90,6 +105,14 @@ export function ModalBoasVindas() {
     hora.length === 5 &&
     cidadeSelecionada !== null;
 
+  const temAlteracao =
+    nome !== originais.nome ||
+    data !== originais.data ||
+    hora !== originais.hora ||
+    buscaCidade !== originais.cidade;
+
+  const podeSalvar = completo ? valido && temAlteracao : valido;
+
   if (!modalAberto) return null;
 
   function proximo() {
@@ -110,9 +133,15 @@ export function ModalBoasVindas() {
     setAberto(false);
   }
 
+  function fechar() {
+    if (completo) {
+      fecharModal();
+    }
+  }
+
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    if (!valido || !cidadeSelecionada) return;
+    if (!podeSalvar || !cidadeSelecionada) return;
 
     const primeiraVez = !completo;
     const primeiroNome = nome.trim().split(" ")[0];
@@ -155,6 +184,17 @@ export function ModalBoasVindas() {
   return (
     <div className="modal-boas-vindas">
       <div className="modal-boas-vindas__caixa">
+        {completo && (
+          <button
+            type="button"
+            className="modal-boas-vindas__fechar"
+            onClick={fechar}
+            aria-label="Fechar"
+          >
+            <i className="fa-solid fa-xmark" />
+          </button>
+        )}
+
         {etapa === "apresentacao" && (
           <div className="modal-boas-vindas__etapa">
             <div className="modal-boas-vindas__logo">
@@ -289,7 +329,7 @@ export function ModalBoasVindas() {
             <button
               type="submit"
               className="botao-mistico modal-boas-vindas__botao"
-              disabled={!valido}
+              disabled={!podeSalvar}
             >
               {completo ? (
                 <>
@@ -307,4 +347,5 @@ export function ModalBoasVindas() {
     </div>
   );
 }
+
 

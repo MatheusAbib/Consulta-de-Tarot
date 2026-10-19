@@ -1,0 +1,186 @@
+﻿@use "../../../estilos/variaveis" as *;
+
+.ciclos-pessoais {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-radius: 18px;
+  background: rgba(40, 32, 70, 0.6);
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  backdrop-filter: blur(8px);
+
+  &__cabecalho {
+    margin-bottom: 1.2rem;
+  }
+
+  &__titulo {
+    font-family: $fonte-titulo;
+    font-size: 1.3rem;
+    color: $cor-primaria;
+    letter-spacing: 0.05em;
+  }
+
+  &__subtitulo {
+    margin-top: 0.3rem;
+    font-size: 0.85rem;
+    color: $cor-texto-suave;
+    opacity: 0.8;
+    line-height: 1.5;
+  }
+
+  &__seletor {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.6rem;
+    margin-bottom: 1.2rem;
+  }
+
+  &__opcao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.7rem 0.5rem;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(167, 139, 250, 0.2);
+    cursor: pointer;
+    transition: all $transicao-rapida;
+
+    &:hover {
+      border-color: rgba(167, 139, 250, 0.5);
+      background: rgba(167, 139, 250, 0.08);
+    }
+
+    &.ativa {
+      border-color: $cor-primaria;
+      background: rgba(167, 139, 250, 0.15);
+      box-shadow: 0 0 12px rgba(167, 139, 250, 0.3);
+    }
+  }
+
+  &__opcao-rotulo {
+    font-family: $fonte-titulo;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $cor-texto-suave;
+    opacity: 0.8;
+  }
+
+  &__opcao-numero {
+    font-family: $fonte-titulo;
+    font-size: 1.6rem;
+    color: $cor-primaria;
+    line-height: 1;
+  }
+
+  &__texto {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 1rem 1.2rem;
+    border-left: 3px solid $cor-secundaria;
+    background: rgba(240, 164, 184, 0.06);
+    border-radius: 10px;
+    animation: ciclos-fade 0.3s ease;
+  }
+
+  &__texto-cabecalho {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  &__badge {
+    display: inline-grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: $gradiente-primario;
+    color: #fff;
+    font-family: $fonte-titulo;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  &__texto-titulo {
+    font-family: $fonte-titulo;
+    font-size: 1.05rem;
+    color: $cor-secundaria;
+    line-height: 1.2;
+  }
+
+  &__texto-sufixo {
+    display: block;
+    font-size: 0.72rem;
+    color: $cor-texto-suave;
+    opacity: 0.7;
+    letter-spacing: 0.05em;
+    margin-top: 0.15rem;
+  }
+
+  &__bloco {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 0.7rem 0.9rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(167, 139, 250, 0.12);
+
+    p {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: $cor-texto-suave;
+    }
+
+    &--fazer {
+      background: rgba(134, 239, 172, 0.06);
+      border: 1px solid rgba(134, 239, 172, 0.22);
+    }
+
+    &--evitar {
+      background: rgba(248, 113, 113, 0.05);
+      border: 1px solid rgba(248, 113, 113, 0.22);
+    }
+  }
+
+  &__rotulo {
+    font-family: $fonte-titulo;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $cor-secundaria;
+    opacity: 0.85;
+  }
+
+  &__dois-blocos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+  }
+}
+
+@keyframes ciclos-fade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .ciclos-pessoais {
+    padding: 1rem;
+
+    &__opcao-numero { font-size: 1.3rem; }
+    &__seletor { gap: 0.4rem; }
+    &__dois-blocos { grid-template-columns: 1fr; }
+  }
+}
+

@@ -10,7 +10,13 @@ interface Props {
   carregando: boolean;
 }
 
-export function FormularioNascimento({ aoEnviar, carregando }: Props) {
+export function FormularioNascimento({
+  aoEnviar,
+  carregando,
+  titulo = "Seus Dados de Nascimento",
+  subtitulo = "Preencha para calcular seu mapa astral completo.",
+  rotuloBotao = "Calcular Mapa Astral",
+}: Props) {
   const [nome, setNome] = useState("");
   const [data, setData] = useState("");
   const [hora, setHora] = useState("");
@@ -50,10 +56,10 @@ export function FormularioNascimento({ aoEnviar, carregando }: Props) {
   return (
     <form className="formulario-nascimento cartao-vidro" onSubmit={handleSubmit}>
       <h2 className="formulario-nascimento__titulo">
-        <i className="fa-solid fa-star" /> Seus Dados de Nascimento
+        <i className="fa-solid fa-star" /> {titulo}
       </h2>
       <p className="formulario-nascimento__subtitulo">
-        Preencha para calcular seu mapa astral completo.
+        {subtitulo}
       </p>
 
       <div className="formulario-nascimento__campo">
@@ -139,11 +145,12 @@ export function FormularioNascimento({ aoEnviar, carregando }: Props) {
           </>
         ) : (
           <>
-            <i className="fa-solid fa-wand-sparkles" /> Calcular Mapa Astral
+            <i className="fa-solid fa-wand-sparkles" /> {rotuloBotao}
           </>
         )}
       </button>
     </form>
   );
 }
+
 

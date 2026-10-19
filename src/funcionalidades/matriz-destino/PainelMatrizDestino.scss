@@ -45,15 +45,7 @@
   &__acoes {
     display: flex;
     justify-content: center;
-    margin-top: 3rem;
-  }
-}
-
-@media (max-width: $breakpoint-mobile) {
-  .painel-matriz-destino {
-    &__cabecalho { margin-bottom: 2rem; }
-    &__titulo { font-size: 1.6rem; }
-    &__descricao { font-size: 1rem; }
+    
   }
 }
 
@@ -65,18 +57,21 @@
 }
 
 .painel-matriz-destino__info {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    border: none;
-    border-radius: 50%;
-    background: rgba(167, 139, 250, 0.15);
-    color: #f0a4b8;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(167, 139, 250, 0.15);
+  border: 1px solid rgba(167, 139, 250, 0.35);
+  color: $cor-secundaria;
+  cursor: pointer;
+  transition: all $transicao-rapida;
 
   &:hover {
     background: rgba(167, 139, 250, 0.35);
+    transform: scale(1.1);
   }
 }
+

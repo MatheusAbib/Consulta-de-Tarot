@@ -11,7 +11,6 @@ import { TIRAGENS } from "../../../nucleo/dados/tiragens";
 import {
   lerArmazenamento,
   salvarArmazenamento,
-  removerArmazenamento,
   CHAVE_LIMITE_TAROT,
 } from "../../../nucleo/servicos/armazenamento";
 
@@ -45,7 +44,10 @@ export function useTarot() {
   const [tiragemAtiva, setTiragemAtiva] = useState<Tiragem | null>(null);
   const [cartasDisponiveis, setCartasDisponiveis] = useState<Carta[]>([]);
   const [leitura, setLeitura] = useState<Leitura>([]);
+  const [pergunta, setPergunta] = useState<string>("");
   const [leiturasSalvas, setLeiturasSalvas] = useState<RegistroLimite>({});
+  const [mostrandoCampoPergunta, setMostrandoCampoPergunta] = useState(false);
+  const [tiragemPendente, setTiragemPendente] = useState<Tiragem | null>(null);
 
   useEffect(() => {
     const salvas = lerArmazenamento<RegistroLimite>(CHAVE_LIMITE_TAROT) ?? {};
@@ -66,25 +68,45 @@ export function useTarot() {
     [leiturasSalvas]
   );
 
-  const dataUso = useCallback(
-  (tipo: TipoTiragem) => leiturasSalvas[tipo]?.data ?? null,
-  [leiturasSalvas]
-);
   const escolherTiragem = useCallback(
     (tipo: TipoTiragem) => {
       const tiragem = TIRAGENS.find((t) => t.id === tipo);
       if (!tiragem) return false;
       if (leiturasSalvas[tipo]) return false;
 
-      const quantidade = tiragem.id === "uma-carta" || tiragem.id === "tres-cartas" ? 18 : tiragem.quantidadeCartas;
-      const embaralhadas = embaralhar(CARTAS_TAROT).slice(0, quantidade);
-      setTiragemAtiva(tiragem);
-      setCartasDisponiveis(embaralhadas);
-      setLeitura(Array(tiragem.quantidadeCartas).fill(null));
+      setTiragemPendente(tiragem);
+      setMostrandoCampoPergunta(true);
+      setPergunta("");
       return true;
     },
     [leiturasSalvas]
   );
+
+  const confirmarPergunta = useCallback(
+    (textoPergunta: string) => {
+      if (!tiragemPendente) return;
+
+      const quantidade =
+        tiragemPendente.id === "uma-carta" || tiragemPendente.id === "tres-cartas"
+          ? 18
+          : tiragemPendente.quantidadeCartas;
+      const embaralhadas = embaralhar(CARTAS_TAROT).slice(0, quantidade);
+
+      setPergunta(textoPergunta.trim());
+      setTiragemAtiva(tiragemPendente);
+      setCartasDisponiveis(embaralhadas);
+      setLeitura(Array(tiragemPendente.quantidadeCartas).fill(null));
+      setMostrandoCampoPergunta(false);
+      setTiragemPendente(null);
+    },
+    [tiragemPendente]
+  );
+
+  const cancelarPergunta = useCallback(() => {
+    setTiragemPendente(null);
+    setMostrandoCampoPergunta(false);
+    setPergunta("");
+  }, []);
 
   const revelarCartaNaPosicao = useCallback(
     (carta: Carta, posicao: number) => {
@@ -118,12 +140,13 @@ export function useTarot() {
         tipo: tiragemAtiva.id,
         data: new Date().toISOString(),
         cartas: cartasFinal,
+        pergunta: pergunta || undefined,
       };
       const novo = { ...atual, [tiragemAtiva.id]: salva };
       salvarArmazenamento(CHAVE_LIMITE_TAROT, novo);
       return novo;
     });
-  }, [tiragemAtiva, leitura]);
+  }, [tiragemAtiva, leitura, pergunta]);
 
   const visualizarSalva = useCallback(
     (tipo: TipoTiragem) => {
@@ -140,6 +163,7 @@ export function useTarot() {
       setTiragemAtiva(tiragem);
       setCartasDisponiveis(salva.cartas);
       setLeitura(leituraCompleta);
+      setPergunta(salva.pergunta ?? "");
       return true;
     },
     [leiturasSalvas]
@@ -149,35 +173,41 @@ export function useTarot() {
     setTiragemAtiva(null);
     setCartasDisponiveis([]);
     setLeitura([]);
+    setPergunta("");
+    setTiragemPendente(null);
+    setMostrandoCampoPergunta(false);
   }, []);
-
-  const limparTudo = useCallback(() => {
-    removerArmazenamento(CHAVE_LIMITE_TAROT);
-    setLeiturasSalvas({});
-    reiniciar();
-  }, [reiniciar]);
 
   const leituraCompleta =
     tiragemAtiva !== null &&
     leitura.length === tiragemAtiva.quantidadeCartas &&
     leitura.every((c) => c !== null);
+  const dataUso = useCallback(
+    (tipo: TipoTiragem) => leiturasSalvas[tipo]?.data ?? null,
+    [leiturasSalvas]
+  );
+
 
   return {
     tiragens: TIRAGENS,
     tiragemAtiva,
     cartasDisponiveis,
     leitura,
+    pergunta,
     leituraCompleta,
     jaUsouHoje,
-    dataUso,
     leituraSalvaDe,
+    dataUso,
+    mostrandoCampoPergunta,
+    tiragemPendente,
     escolherTiragem,
+    confirmarPergunta,
+    cancelarPergunta,
     escolherProximaCarta,
     revelarCartaNaPosicao,
     visualizarSalva,
     finalizar,
     reiniciar,
-    limparTudo,
   };
 }
 

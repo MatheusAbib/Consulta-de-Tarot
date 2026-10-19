@@ -2,6 +2,7 @@
 import type { ResultadoMapaAstral } from "../servicos/astrologia";
 import { IconePlaneta } from "./IconePlaneta";
 import { IconeSigno } from "./IconeSigno";
+import { calcularAspectos } from "../servicos/aspectos";
 import "./MapaAstral.scss";
 
 interface Props {
@@ -21,6 +22,8 @@ export function MapaAstral({ resultado }: Props) {
   const raioInterno = 200;
   const raioPlanetas = 160;
   const raioCasas = 110;
+  const aspectos = calcularAspectos(resultado.planetas);
+  const planetasPorNome = Object.fromEntries(resultado.planetas.map(p => [p.nome, p]));
 
   function pontoNoCirculo(grau: number, raio: number) {
     const rad = ((grau - 90) * Math.PI) / 180;
@@ -134,6 +137,35 @@ export function MapaAstral({ resultado }: Props) {
           strokeWidth="2"
           strokeDasharray="6 4"
         />
+
+        {aspectos.map((asp, i) => {
+          const pA = planetasPorNome[asp.planetaA];
+          const pB = planetasPorNome[asp.planetaB];
+          if (!pA || !pB) return null;
+          const a = pontoNoCirculo(pA.longitude, raioPlanetas);
+          const b = pontoNoCirculo(pB.longitude, raioPlanetas);
+          const cores: Record<string, string> = {
+            conjuncao: "#a78bfa",
+            sextil: "#86efac",
+            quadratura: "#fca5a5",
+            trigono: "#93c5fd",
+            oposicao: "#f0a4b8",
+          };
+          const tracejada = asp.tipo === "quadratura" || asp.tipo === "oposicao";
+          return (
+            <line
+              key={i}
+              x1={a.x}
+              y1={a.y}
+              x2={b.x}
+              y2={b.y}
+              stroke={cores[asp.tipo]}
+              strokeWidth="1.2"
+              strokeOpacity="0.55"
+              strokeDasharray={tracejada ? "4 3" : undefined}
+            />
+          );
+        })}
       </svg>
 
       <div className="mapa-astral__sobreposicao">
@@ -172,6 +204,7 @@ export function MapaAstral({ resultado }: Props) {
     </div>
   );
 }
+
 
 
 

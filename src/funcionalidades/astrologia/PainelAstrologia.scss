@@ -57,14 +57,8 @@
   &__acoes {
     display: flex;
     justify-content: center;
-    margin-top: 3rem;
+    
   }
 }
 
-@media (max-width: $breakpoint-mobile) {
-  .painel-astrologia {
-    &__cabecalho { margin-bottom: 2rem; }
-    &__titulo { font-size: 1.6rem; }
-    &__descricao { font-size: 1rem; }
-  }
-}
+

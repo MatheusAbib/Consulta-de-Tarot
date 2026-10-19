@@ -178,33 +178,6 @@
   i { color: $cor-secundaria; }
 }
 
-@media (max-width: $breakpoint-mobile) {
-  .resultado-numero {
-    padding: 1.5rem;
-
-    &__cabecalho {
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-      padding-bottom: 1.2rem;
-    }
-
-    &__circulo {
-      width: 60px;
-      height: 60px;
-    }
-
-    &__valor { font-size: 1.5rem; }
-    &__titulo { font-size: 1.2rem; }
-    &__contexto { font-size: 0.85rem; }
-    &__subtitulo-numero { font-size: 1.1rem; }
-    &__descricao-curta { font-size: 0.9rem; margin-bottom: 1.5rem; }
-    &__secao-cabecalho { padding: 0.9rem 1rem; }
-    &__secao-titulo { font-size: 0.95rem; }
-    &__secao-corpo { padding: 0 1rem 1rem; }
-    &__paragrafo { font-size: 0.95rem; line-height: 1.7; }
-  }
-}
-
 .resultado-numero__resumo {
   position: relative;
   display: flex;

@@ -1,0 +1,74 @@
+﻿@use "../../estilos/variaveis" as *;
+
+.painel-biblioteca {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  &__cabecalho {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  &__titulo {
+    font-family: $fonte-titulo;
+    font-size: 2rem;
+    color: $cor-primaria;
+    letter-spacing: 0.05em;
+  }
+
+  &__subtitulo {
+    margin-top: 0.4rem;
+    color: $cor-texto-suave;
+    font-size: 0.9rem;
+    opacity: 0.85;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.55;
+  }
+
+  &__seletor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  &__opcao {
+    padding: 0.55rem 1.2rem;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(167, 139, 250, 0.25);
+    color: $cor-texto-suave;
+    font-family: $fonte-titulo;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all $transicao-rapida;
+
+    &:hover {
+      border-color: rgba(167, 139, 250, 0.5);
+      background: rgba(167, 139, 250, 0.08);
+      color: $cor-texto;
+    }
+
+    &.ativa {
+      background: $gradiente-primario;
+      border-color: transparent;
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(167, 139, 250, 0.3);
+    }
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .painel-biblioteca {
+
+    &__titulo { font-size: 1.6rem; }
+
+    &__opcao {
+      padding: 0.5rem 1rem;
+      font-size: 0.78rem;
+    }
+  }
+}

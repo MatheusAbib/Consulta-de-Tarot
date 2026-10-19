@@ -15,47 +15,57 @@ export function ResumoPlanetas({ resultado }: Props) {
   const grauMeioDoCeu = Math.floor(resultado.meioDoCeu % 30);
 
   return (
-    <div className="resumo-planetas">
-      <h3 className="resumo-planetas__titulo">Posições Planetárias</h3>
+    <section className="resumo-planetas">
+      <header className="resumo-planetas__cabecalho">
+        <h3 className="resumo-planetas__titulo">Posições Planetárias</h3>
+        <p className="resumo-planetas__subtitulo">
+          Onde cada ponto do seu mapa estava no céu no momento do seu nascimento.
+        </p>
+      </header>
 
       <div className="resumo-planetas__destaques">
-        <div className="resumo-planetas__destaque cartao-vidro">
-          <span className="resumo-planetas__destaque-rotulo">Ascendente</span>
-          <div className="resumo-planetas__destaque-valor">
-            <IconeSigno signo={signoAscendente} tamanho={48} />
-            <span>{signoAscendente}</span>
+        <div className="resumo-planetas__destaque">
+          <div className="resumo-planetas__destaque-info">
+            <span className="resumo-planetas__destaque-rotulo">Ascendente</span>
+            <span className="resumo-planetas__destaque-signo">{signoAscendente}</span>
+            <span className="resumo-planetas__destaque-grau">{grauAscendente}°</span>
           </div>
-          <span className="resumo-planetas__destaque-grau">{grauAscendente}°</span>
+          <div className="resumo-planetas__destaque-icone">
+            <IconeSigno signo={signoAscendente} tamanho={56} />
+          </div>
         </div>
 
-        <div className="resumo-planetas__destaque cartao-vidro">
-          <span className="resumo-planetas__destaque-rotulo">Meio do Céu</span>
-          <div className="resumo-planetas__destaque-valor">
-            <IconeSigno signo={signoMeioDoCeu} tamanho={48} />
-            <span>{signoMeioDoCeu}</span>
+        <div className="resumo-planetas__destaque">
+          <div className="resumo-planetas__destaque-info">
+            <span className="resumo-planetas__destaque-rotulo">Meio do Céu</span>
+            <span className="resumo-planetas__destaque-signo">{signoMeioDoCeu}</span>
+            <span className="resumo-planetas__destaque-grau">{grauMeioDoCeu}°</span>
           </div>
-          <span className="resumo-planetas__destaque-grau">{grauMeioDoCeu}°</span>
+          <div className="resumo-planetas__destaque-icone">
+            <IconeSigno signo={signoMeioDoCeu} tamanho={56} />
+          </div>
         </div>
       </div>
 
-      <div className="resumo-planetas__lista">
+      <div className="resumo-planetas__grade">
         {resultado.planetas.map((planeta, i) => (
-          <div key={i} className="resumo-planetas__item">
-            <div className="resumo-planetas__item-planeta">
-              <IconePlaneta planeta={planeta.nome} tamanho={44} />
-              <span>{planeta.nome}</span>
+          <div key={i} className="resumo-planetas__card">
+            <div className="resumo-planetas__card-icone">
+              <IconePlaneta planeta={planeta.nome} tamanho={36} />
             </div>
-
-            <div className="resumo-planetas__item-posicao">
-              <span className="resumo-planetas__item-grau">
-                {Math.floor(planeta.grau)}°
-              </span>
-              <IconeSigno signo={planeta.signo} tamanho={32} />
-              <span className="resumo-planetas__item-signo">{planeta.signo}</span>
+            <div className="resumo-planetas__card-info">
+              <span className="resumo-planetas__card-nome">{planeta.nome}</span>
+              <div className="resumo-planetas__card-posicao">
+                <span className="resumo-planetas__card-grau">
+                  {Math.floor(planeta.grau)}°
+                </span>
+                <IconeSigno signo={planeta.signo} tamanho={20} />
+                <span className="resumo-planetas__card-signo">{planeta.signo}</span>
+              </div>
             </div>
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

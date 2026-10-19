@@ -39,12 +39,3 @@
   }
 }
 
-@media (max-width: $breakpoint-mobile) {
-  .Toastify__toast-container {
-    padding: 0.8rem !important;
-  }
-
-  .Toastify__toast {
-    font-size: 0.92rem !important;
-  }
-}

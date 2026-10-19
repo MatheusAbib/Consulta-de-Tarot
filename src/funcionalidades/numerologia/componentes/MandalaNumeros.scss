@@ -88,30 +88,3 @@
   }
 }
 
-@media (max-width: $breakpoint-mobile) {
-  .mandala-numeros {
-    max-width: 340px;
-    margin: 1rem auto 3rem;
-
-    &__no {
-      width: 62px;
-      height: 62px;
-
-      i { font-size: 0.7rem; }
-
-      &--centro {
-        width: 75px;
-        height: 75px;
-
-        .mandala-numeros__valor { font-size: 1.3rem; }
-        .mandala-numeros__rotulo { font-size: 0.6rem; }
-      }
-    }
-
-    &__valor { font-size: 1.05rem; }
-    &__rotulo {
-      font-size: 0.5rem;
-      letter-spacing: 0;
-    }
-  }
-}

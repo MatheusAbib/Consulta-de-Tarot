@@ -1,0 +1,179 @@
+﻿@use "../../../estilos/variaveis" as *;
+
+.lista-aspectos {
+  max-width: 1000px;
+  margin: 4rem auto 0;
+
+  &__cabecalho {
+    text-align: center;
+    margin-bottom: 1.6rem;
+  }
+
+  &__titulo {
+    font-family: $fonte-titulo;
+    font-size: 1.6rem;
+    color: $cor-primaria;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.4rem;
+  }
+
+  &__subtitulo {
+    font-size: 0.9rem;
+    color: $cor-texto-suave;
+    opacity: 0.8;
+  }
+
+  &__vazio {
+    text-align: center;
+    color: $cor-texto-suave;
+    opacity: 0.7;
+    font-style: italic;
+    padding: 1.5rem;
+  }
+
+  &__filtros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1.6rem;
+  }
+
+  &__filtro {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.45rem 1rem;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(167, 139, 250, 0.2);
+    color: $cor-texto-suave;
+    font-family: $fonte-titulo;
+    font-size: 0.82rem;
+    cursor: pointer;
+    transition: all $transicao-rapida;
+
+    &:hover {
+      border-color: rgba(167, 139, 250, 0.5);
+      background: rgba(167, 139, 250, 0.08);
+    }
+
+    &.ativo {
+      background: rgba(167, 139, 250, 0.12);
+      font-weight: 600;
+    }
+  }
+
+  &__filtro-cor {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+
+  &__grade {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  &__item {
+    position: relative;
+    padding: 1.1rem 1.2rem;
+    border-radius: 14px;
+    background: rgba(40, 32, 70, 0.5);
+    border: 1px solid rgba(167, 139, 250, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  &__cabecalho-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__tipo {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  &__titulo-item {
+    font-family: $fonte-titulo;
+    font-size: 0.92rem;
+    color: $cor-primaria;
+    line-height: 1.25;
+    flex: 1;
+  }
+
+  &__orbe {
+    align-self: flex-start;
+    font-size: 0.9rem;
+    color: $cor-texto-suave;
+    opacity: 0.55;
+  }
+
+  &__descricao {
+    font-size: 0.86rem;
+    line-height: 1.6;
+    color: $cor-texto-suave;
+  }
+
+  &__blocos {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__bloco {
+    padding: 0.6rem 0.8rem;
+    border-radius: 8px;
+
+    strong {
+      display: block;
+      font-family: $fonte-titulo;
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+    }
+
+    p {
+      font-size: 0.8rem;
+      line-height: 1.5;
+      color: $cor-texto-suave;
+    }
+
+    &--bom {
+      background: rgba(134, 239, 172, 0.06);
+      border: 1px solid rgba(134, 239, 172, 0.22);
+      strong { color: #86efac; }
+    }
+
+    &--atencao {
+      background: rgba(248, 113, 113, 0.05);
+      border: 1px solid rgba(248, 113, 113, 0.22);
+      strong { color: #fca5a5; }
+    }
+  }
+
+  &__conselho {
+    font-size: 0.83rem;
+    line-height: 1.5;
+    color: $cor-secundaria;
+    padding: 0.55rem 0.75rem;
+    background: rgba(240, 164, 184, 0.06);
+    border-left: 3px solid $cor-secundaria;
+    border-radius: 6px;
+
+    strong { color: $cor-secundaria; }
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .lista-aspectos__grade {
+    grid-template-columns: 1fr;
+  }
+}

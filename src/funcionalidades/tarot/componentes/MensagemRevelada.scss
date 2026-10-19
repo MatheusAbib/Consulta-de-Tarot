@@ -143,32 +143,48 @@
   }
 }
 
-@media (max-width: $breakpoint-mobile) {
-  .mensagem-revelada {
-    &__item {
-      padding: 1.5rem;
-    }
+.mensagem-revelada__contexto {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 1.5rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(167, 139, 250, 0.12), rgba(240, 164, 184, 0.08));
+  border-left: 3px solid $cor-secundaria;
+}
 
-    &__item-cabecalho {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.4rem;
-    }
+.mensagem-revelada__contexto-icone {
+  color: $cor-secundaria;
+  font-size: 1rem;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
 
-    &__posicao-descricao {
-      text-align: left;
-    }
+.mensagem-revelada__contexto-texto {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: $cor-texto-suave;
+  font-style: italic;
+  margin: 0;
+}
 
-    &__titulo {
-      font-size: 1.5rem;
-    }
+.mensagem-revelada__carta-naipe {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 50px;
+  background: rgba(167, 139, 250, 0.12);
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  margin-bottom: 0.8rem;
+}
 
-    &__carta-titulo {
-      font-size: 1.3rem;
-    }
-
-    &__carta-fortuna {
-      font-size: 1rem;
-    }
-  }
+.mensagem-revelada__carta-naipe-nome {
+  font-family: $fonte-titulo;
+  font-size: 0.85rem;
+  color: $cor-texto-suave;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }

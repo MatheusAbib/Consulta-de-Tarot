@@ -60,7 +60,7 @@ export function Interpretacoes({ resultado }: Props) {
   const dados = fonte?.[ativo.signo];
 
   return (
-    <div className="interpretacoes">
+    <section className="interpretacoes">
       <header className="interpretacoes__cabecalho">
         <h2 className="interpretacoes__titulo">Interpretações</h2>
         <p className="interpretacoes__subtitulo">
@@ -68,57 +68,65 @@ export function Interpretacoes({ resultado }: Props) {
         </p>
       </header>
 
-      <div className="interpretacoes__abas">
-        {todos.map(({ nome }) => {
-          const ativo = nome === planetaAtivo;
-          return (
-            <button
-              key={nome}
-              type="button"
-              className={`interpretacoes__aba ${ativo ? "ativa" : ""}`}
-              onClick={() => setPlanetaAtivo(nome)}
-            >
-              <IconePlaneta planeta={nome} tamanho={28} />
-              <span>{nome}</span>
-            </button>
-          );
-        })}
-      </div>
+      <div className="interpretacoes__layout">
+        <aside className="interpretacoes__menu" role="tablist">
+          {todos.map(({ nome }) => {
+            const isAtivo = nome === planetaAtivo;
+            return (
+              <button
+                key={nome}
+                type="button"
+                role="tab"
+                aria-selected={isAtivo}
+                className={`interpretacoes__aba ${isAtivo ? "ativa" : ""}`}
+                onClick={() => setPlanetaAtivo(nome)}
+              >
+                <IconePlaneta planeta={nome} tamanho={24} />
+                <span>{nome}</span>
+              </button>
+            );
+          })}
+        </aside>
 
-      {dados && (
-        <article className="interpretacoes__cartao cartao-vidro">
-          <header className="interpretacoes__cartao-cabecalho">
-            <div className="interpretacoes__cartao-icone">
-              <IconePlaneta planeta={ativo.nome} tamanho={56} />
-            </div>
-            <div className="interpretacoes__cartao-titulo">
-              <span className="interpretacoes__cartao-planeta">{ativo.nome}</span>
-              <div className="interpretacoes__cartao-signo-linha">
-                <span className="interpretacoes__cartao-signo-prefixo">em</span>
-                <IconeSigno signo={ativo.signo} tamanho={28} />
-                <span className="interpretacoes__cartao-signo">{ativo.signo}</span>
+        <div className="interpretacoes__conteudo">
+          {dados && (
+            <article className="interpretacoes__cartao">
+              <header className="interpretacoes__cartao-cabecalho">
+                <div className="interpretacoes__cartao-icone">
+                  <IconePlaneta planeta={ativo.nome} tamanho={48} />
+                </div>
+                <div className="interpretacoes__cartao-titulo">
+                  <span className="interpretacoes__cartao-planeta">
+                    {ativo.nome} em {ativo.signo}
+                  </span>
+                  <div className="interpretacoes__cartao-signo-linha">
+                    <IconeSigno signo={ativo.signo} tamanho={22} />
+                    <span className="interpretacoes__cartao-signo">{ativo.signo}</span>
+                  </div>
+                </div>
+              </header>
+
+              <div className="interpretacoes__cartao-destaque">
+                <h4 className="interpretacoes__cartao-subtitulo">{dados.titulo}</h4>
+                <p className="interpretacoes__cartao-descricao">{dados.subtitulo}</p>
               </div>
-            </div>
-          </header>
 
-          <div className="interpretacoes__cartao-destaque">
-            <h4 className="interpretacoes__cartao-subtitulo">{dados.titulo}</h4>
-            <p className="interpretacoes__cartao-descricao">{dados.subtitulo}</p>
-          </div>
-
-          <div className="interpretacoes__secoes">
-            {SECOES.map((secao) => (
-              <SecaoAcordeao
-                key={secao.id}
-                titulo={secao.titulo}
-                icone={secao.icone}
-                paragrafos={dados[secao.id]}
-              />
-            ))}
-          </div>
-        </article>
-      )}
-    </div>
+              <div className="interpretacoes__secoes">
+                {SECOES.map((secao, i) => (
+                  <SecaoAcordeao
+                    key={secao.id}
+                    titulo={secao.titulo}
+                    icone={secao.icone}
+                    paragrafos={dados[secao.id]}
+                    padraoAberto={i === 0}
+                  />
+                ))}
+              </div>
+            </article>
+          )}
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -126,10 +134,11 @@ interface SecaoAcordeaoProps {
   titulo: string;
   icone: string;
   paragrafos: string[];
+  padraoAberto?: boolean;
 }
 
-function SecaoAcordeao({ titulo, icone, paragrafos }: SecaoAcordeaoProps) {
-  const [aberto, setAberto] = useState(false);
+function SecaoAcordeao({ titulo, icone, paragrafos, padraoAberto }: SecaoAcordeaoProps) {
+  const [aberto, setAberto] = useState(!!padraoAberto);
 
   return (
     <div className={`interpretacoes__secao-bloco ${aberto ? "expandido" : ""}`}>
@@ -137,6 +146,7 @@ function SecaoAcordeao({ titulo, icone, paragrafos }: SecaoAcordeaoProps) {
         type="button"
         className="interpretacoes__secao-cabecalho"
         onClick={() => setAberto((v) => !v)}
+        aria-expanded={aberto}
       >
         <span className="interpretacoes__secao-titulo">
           <i className={icone} />

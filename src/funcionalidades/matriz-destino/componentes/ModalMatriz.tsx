@@ -114,9 +114,11 @@ export function ModalMatriz({ aberto, aoFechar, dataNascimento }: Props) {
   return (
     <div className="modal-matriz" onClick={aoFechar}>
       <div className="modal-matriz__caixa" onClick={(e) => e.stopPropagation()}>
-        <button type="button" className="modal-matriz__fechar" onClick={aoFechar} aria-label="Fechar">
-          <i className="fa-solid fa-xmark" />
-        </button>
+        <div className="modal-matriz__fechar-wrapper">
+          <button type="button" className="modal-matriz__fechar" onClick={aoFechar} aria-label="Fechar">
+            <i className="fa-solid fa-xmark" />
+          </button>
+        </div>
 
         <h2 className="modal-matriz__titulo">A Matriz do Destino</h2>
 
@@ -195,6 +197,11 @@ export function ModalMatriz({ aberto, aoFechar, dataNascimento }: Props) {
 
   
       </div>
+      <button type="button" class="modal-matriz__fechar" onClick={aoFechar} aria-label="Fechar">
+        <i className="fa-solid fa-xmark" />
+      </button>
     </div>
   );
 }
+
+

@@ -1,10 +1,13 @@
 ﻿import { useEffect, useState } from "react";
 import { useNumerologia } from "./ganchos/useNumerologia";
+import { useCiclos } from "./ganchos/useCiclos";
 import { usePerfil } from "../../nucleo/contextos/PerfilContexto";
 import { AvisoPreencherPerfil } from "../../compartilhado/componentes/AvisoPreencherPerfil";
 import { ResultadoNumero } from "./componentes/ResultadoNumero";
 import { MandalaNumeros } from "./componentes/MandalaNumeros";
 import { ModalComoFunciona } from "./componentes/ModalComoFunciona";
+import { CiclosPessoais } from "./componentes/CiclosPessoais";
+import { Compatibilidade } from "./componentes/Compatibilidade";
 import { CAMINHO_DE_VIDA } from "./dados/interpretacoes/caminho-de-vida";
 import { EXPRESSAO } from "./dados/interpretacoes/expressao";
 import { ALMA } from "./dados/interpretacoes/alma";
@@ -40,6 +43,7 @@ function buscarInterpretacao(
 export function PainelNumerologia() {
   const { perfil, completo } = usePerfil();
   const { resultado, erro, calcular } = useNumerologia();
+  const ciclos = useCiclos(perfil?.dataNascimento);
   const [chaveSelecionada, setChaveSelecionada] = useState<string>("caminhoDeVida");
   const [modalAberto, setModalAberto] = useState(false);
 
@@ -66,48 +70,13 @@ export function PainelNumerologia() {
 
   const numeros: NumeroInfo[] = resultado
     ? [
-        {
-          chave: "caminhoDeVida",
-          numero: resultado.caminhoDeVida,
-          titulo: "Caminho de Vida",
-          contexto: "Seu propósito de vida e missão principal.",
-        },
-        {
-          chave: "expressao",
-          numero: resultado.expressao,
-          titulo: "Expressão",
-          contexto: "Como você se mostra e se comunica com o mundo.",
-        },
-        {
-          chave: "alma",
-          numero: resultado.alma,
-          titulo: "Alma",
-          contexto: "O que seu coração realmente deseja.",
-        },
-        {
-          chave: "personalidade",
-          numero: resultado.personalidade,
-          titulo: "Personalidade",
-          contexto: "Como as pessoas te percebem por fora.",
-        },
-        {
-          chave: "aniversario",
-          numero: resultado.aniversario,
-          titulo: "Aniversário",
-          contexto: "O talento especial que você trouxe ao nascer.",
-        },
-        {
-          chave: "maturidade",
-          numero: resultado.maturidade,
-          titulo: "Maturidade",
-          contexto: "Quem você se torna na segunda metade da vida.",
-        },
-        {
-          chave: "karmico",
-          numero: resultado.karmico,
-          titulo: "Kármico",
-          contexto: "Lições que sua alma escolheu aprender nesta vida.",
-        },
+        { chave: "caminhoDeVida", numero: resultado.caminhoDeVida, titulo: "Caminho de Vida", contexto: "Seu propósito de vida e missão principal." },
+        { chave: "expressao", numero: resultado.expressao, titulo: "Expressão", contexto: "Como você se mostra e se comunica com o mundo." },
+        { chave: "alma", numero: resultado.alma, titulo: "Alma", contexto: "O que seu coração realmente deseja." },
+        { chave: "personalidade", numero: resultado.personalidade, titulo: "Personalidade", contexto: "Como as pessoas te percebem por fora." },
+        { chave: "aniversario", numero: resultado.aniversario, titulo: "Aniversário", contexto: "O talento especial que você trouxe ao nascer." },
+        { chave: "maturidade", numero: resultado.maturidade, titulo: "Maturidade", contexto: "Quem você se torna na segunda metade da vida." },
+        { chave: "karmico", numero: resultado.karmico, titulo: "Kármico", contexto: "Lições que sua alma escolheu aprender nesta vida." },
       ]
     : [];
 
@@ -127,6 +96,10 @@ export function PainelNumerologia() {
             <i className="fa-solid fa-circle-info" />
           </button>
         </div>
+        <p className="painel-numerologia__descricao">
+          Seus números pessoais, ciclos e compatibilidade — calculados a partir do
+          seu nome completo e data de nascimento.
+        </p>
       </header>
 
       {erro && (
@@ -144,31 +117,46 @@ export function PainelNumerologia() {
             aoSelecionar={setChaveSelecionada}
           />
 
-          <div className="painel-numerologia__abas">
-            {numeros.map((info) => {
-              const ativo = info.chave === chaveSelecionada;
-              return (
-                <button
-                  key={info.chave}
-                  type="button"
-                  className={`painel-numerologia__aba ${ativo ? "ativa" : ""}`}
-                  onClick={() => setChaveSelecionada(info.chave)}
-                >
-                  <span className="painel-numerologia__aba-numero">{info.numero}</span>
-                  <span className="painel-numerologia__aba-titulo">{info.titulo}</span>
-                </button>
-              );
-            })}
+          <Compatibilidade
+            nomeA={perfil?.nome ?? ""}
+            dataA={perfil?.dataNascimento ?? ""}
+          />
+          <div className="painel-numerologia__layout">
+            <aside className="painel-numerologia__menu" role="tablist">
+              {numeros.map((info) => {
+                const ativo = info.chave === chaveSelecionada;
+                return (
+                  <button
+                    key={info.chave}
+                    type="button"
+                    role="tab"
+                    aria-selected={ativo}
+                    className={`painel-numerologia__aba ${ativo ? "ativa" : ""}`}
+                    onClick={() => setChaveSelecionada(info.chave)}
+                  >
+                    <span className="painel-numerologia__aba-numero">{info.numero}</span>
+                    <span className="painel-numerologia__aba-titulo">{info.titulo}</span>
+                  </button>
+                );
+              })}
+            </aside>
+
+            
+
+            <div className="painel-numerologia__conteudo">
+              <ResultadoNumero
+                numero={infoAtiva.numero}
+                titulo={infoAtiva.titulo}
+                contexto={infoAtiva.contexto}
+                resumo={(RESUMOS as any)[infoAtiva.chave]?.[infoAtiva.numero]}
+                interpretacao={buscarInterpretacao(infoAtiva.chave, infoAtiva.numero)}
+                destaque={infoAtiva.chave === "caminhoDeVida"}
+              />
+            </div>
           </div>
 
-          <ResultadoNumero
-            numero={infoAtiva.numero}
-            titulo={infoAtiva.titulo}
-            contexto={infoAtiva.contexto}
-            resumo={(RESUMOS as any)[infoAtiva.chave]?.[infoAtiva.numero]}
-            interpretacao={buscarInterpretacao(infoAtiva.chave, infoAtiva.numero)}
-            destaque={infoAtiva.chave === "caminhoDeVida"}
-          />
+          {ciclos && <CiclosPessoais ciclos={ciclos} />}
+
         </>
       )}
 

@@ -40,18 +40,3 @@
   }
 }
 
-@media (max-width: $breakpoint-mobile) {
-  .painel-placeholder {
-    padding: 2.5rem 0;
-
-    &__icone {
-      font-size: 3rem;
-    }
-
-    &__aviso {
-      flex-direction: column;
-      text-align: center;
-      padding: 1.2rem;
-    }
-  }
-}

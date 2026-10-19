@@ -21,11 +21,3 @@
   }
 }
 
-@media (max-width: $breakpoint-mobile) {
-  .botao-perfil {
-    padding: 0.5rem 0.8rem;
-    border-radius: 50%;
-
-    span { display: none; }
-  }
-}

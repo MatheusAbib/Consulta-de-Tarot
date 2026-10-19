@@ -5,6 +5,9 @@ import { AvisoPreencherPerfil } from "../../compartilhado/componentes/AvisoPreen
 import { MapaAstral } from "./componentes/MapaAstral";
 import { ResumoPlanetas } from "./componentes/ResumoPlanetas";
 import { Interpretacoes } from "./componentes/Interpretacoes";
+import { ListaAspectos } from "./componentes/ListaAspectos";
+import { MapaAstralSkeleton } from "./componentes/MapaAstralSkeleton";
+import { Sinastria } from "./componentes/Sinastria";
 import "./PainelAstrologia.scss";
 
 export function PainelAstrologia() {
@@ -45,12 +48,7 @@ export function PainelAstrologia() {
         </p>
       </header>
 
-      {carregando && (
-        <div className="painel-astrologia__carregando">
-          <i className="fa-solid fa-spinner fa-spin" />
-          <span>Calculando seu mapa...</span>
-        </div>
-      )}
+      {(carregando || !resultado) && <MapaAstralSkeleton />}
 
       {erro && (
         <div className="painel-astrologia__erro">
@@ -63,10 +61,16 @@ export function PainelAstrologia() {
         <>
           <MapaAstral resultado={resultado} />
           <ResumoPlanetas resultado={resultado} />
+          <Sinastria mapaA={resultado} nomeA={perfil?.nome ?? "Você"} />
           <Interpretacoes resultado={resultado} />
+          <ListaAspectos planetas={resultado.planetas} />
         </>
       )}
     </div>
   );
 }
+
+
+
+
 

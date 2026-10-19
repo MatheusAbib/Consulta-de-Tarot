@@ -1,0 +1,73 @@
+﻿@use "../../../estilos/variaveis" as *;
+
+.mapa-astral-skeleton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 0;
+
+  &__circulo {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    max-width: 90vw;
+    max-height: 90vw;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(26, 19, 51, 0.9), rgba(13, 11, 26, 1));
+    display: grid;
+    place-items: center;
+    animation: skeleton-pulsar 1.8s ease-in-out infinite;
+  }
+
+  &__anel {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid rgba(167, 139, 250, 0.12);
+
+    &--externo {
+      inset: 0;
+      border-color: rgba(167, 139, 250, 0.2);
+    }
+
+    &--interno {
+      inset: 13.33%;
+    }
+
+    &--casas {
+      inset: 26.66%;
+    }
+  }
+
+  &__texto {
+    font-family: $fonte-titulo;
+    font-size: 0.9rem;
+    color: $cor-texto-suave;
+    opacity: 0.7;
+    letter-spacing: 0.08em;
+  }
+}
+
+@keyframes skeleton-pulsar {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.01);
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .mapa-astral-skeleton {
+    &__circulo {
+      width: 90vw;
+      height: 90vw;
+    }
+
+    &__texto {
+      font-size: 0.8rem;
+    }
+  }
+}
