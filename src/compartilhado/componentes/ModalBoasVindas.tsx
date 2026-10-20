@@ -168,6 +168,17 @@ export function ModalBoasVindas() {
   return (
     <div className="modal-boas-vindas">
       <div className="modal-boas-vindas__caixa">
+        {completo && (
+          <button
+            type="button"
+            className="modal-boas-vindas__fechar"
+            onClick={fechar}
+            aria-label="Fechar"
+          >
+            <i className="fa-solid fa-xmark" />
+          </button>
+        )}
+
         {etapa === "apresentacao" && (
           <div className="modal-boas-vindas__etapa">
             <div className="modal-boas-vindas__logo">
@@ -305,16 +316,7 @@ export function ModalBoasVindas() {
           </form>
         )}
       </div>
-      {completo && (
-        <button
-          type="button"
-          className="modal-boas-vindas__fechar"
-          onClick={fechar}
-          aria-label="Fechar"
-        >
-          <i className="fa-solid fa-xmark" />
-        </button>
-      )}
     </div>
   );
 }
+
