@@ -132,8 +132,8 @@ useEffect(() => {
     }
   }
 
-  function handleSubmit(e: FormEvent) {
-    e.preventDefault();
+  function handleSubmit(e?: FormEvent) {
+    e?.preventDefault();
     if (!podeSalvar || !cidadeSelecionada) return;
 
     const primeiraVez = !completo;
@@ -299,6 +299,11 @@ useEffect(() => {
               type="submit"
               className="botao-mistico modal-boas-vindas__botao"
               disabled={!podeSalvar}
+              onClick={(e) => {
+                e.preventDefault();
+                (e.target as HTMLElement).focus();
+                setTimeout(() => handleSubmit(), 50);
+              }}
             >
               {completo ? (
                 <>Salvar <i className="fa-solid fa-check" /></>
@@ -312,6 +317,8 @@ useEffect(() => {
     </div>
   );
 }
+
+
 
 
 
