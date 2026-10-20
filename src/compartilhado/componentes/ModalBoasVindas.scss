@@ -139,7 +139,7 @@
       max-width: 100%;
       box-sizing: border-box;
       min-width: 0;
-      padding: 0.8rem 1rem;
+      padding: 0.8rem 1rem; height: 3.2rem;
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(153, 105, 255, 0.3);
       border-radius: 10px;
@@ -163,6 +163,9 @@
       max-width: 100%;
       min-width: 0;
       display: block;
+      -webkit-appearance: none;
+      appearance: none;
+      line-height: normal;
     }
   }
 
@@ -258,5 +261,6 @@
     }
   }
 }
+
 
 
