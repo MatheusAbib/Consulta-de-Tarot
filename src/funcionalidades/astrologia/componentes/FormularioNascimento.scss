@@ -45,7 +45,7 @@
     }
 
     input {
-      width: 100%;
+      width: 100%; max-width: 100%; box-sizing: border-box; min-width: 0;
       padding: 0.8rem 1rem;
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(153, 105, 255, 0.3);
@@ -134,6 +134,16 @@
     margin-top: 1rem;
     padding: 1rem 2rem;
     font-size: 1.05rem;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .formulario-nascimento {
+    &__linha {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
   }
 }
 

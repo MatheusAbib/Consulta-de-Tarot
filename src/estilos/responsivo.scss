@@ -50,9 +50,6 @@
   }
 
   .botao-perfil {
-    padding: 0.5rem 0.8rem;
-    border-radius: 50%;
-
     span {
       display: none;
     }
@@ -1047,6 +1044,14 @@
     height: 22px;
     font-size: 0.65rem;
   }
+  .rodape__coluna p, .rodape__base{
+    font-size: 0.75rem;
+  }
+
+  .barra-navegacao__logo{
+    font-size: 1.3rem;
+  }
+
 }
 
 @media (max-width: $breakpoint-mobile) {
