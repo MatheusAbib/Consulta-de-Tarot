@@ -92,7 +92,6 @@
   }
 }
 
-
 .painel-numerologia__titulo-linha,
 .painel-matriz-destino__titulo-linha,
 .painel-signos__titulo-linha {
@@ -122,4 +121,28 @@
     transform: scale(1.1);
   }
 }
+
+
+@media (hover: none) {
+  *:hover, *:focus, *:active {
+    background-color: inherit !important;
+    color: inherit !important;
+    border-color: inherit !important;
+    transform: none !important;
+    box-shadow: none !important;
+    filter: none !important;
+    text-shadow: none !important;
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+}
+
+
+body.modal-aberto {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
 

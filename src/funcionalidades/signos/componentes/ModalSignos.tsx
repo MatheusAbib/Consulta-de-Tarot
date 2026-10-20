@@ -20,19 +20,19 @@ const MODALIDADES = [
 ];
 
 export function ModalSignos({ aberto, aoFechar }: Props) {
-  useEffect(() => {
-    function aoTeclar(e: KeyboardEvent) {
-      if (e.key === "Escape") aoFechar();
-    }
-    if (aberto) {
-      document.body.style.overflow = "hidden";
-      document.addEventListener("keydown", aoTeclar);
-    }
+      useEffect(() => {
+    if (!aberto) return;
+
+    const scrollY = window.scrollY;
+    document.body.style.top = `-${scrollY}px`;
+    document.body.classList.add("modal-aberto");
+
     return () => {
-      document.body.style.overflow = "";
-      document.removeEventListener("keydown", aoTeclar);
+      document.body.classList.remove("modal-aberto");
+      document.body.style.top = "";
+      window.scrollTo(0, scrollY);
     };
-  }, [aberto, aoFechar]);
+  }, [aberto]);
 
   if (!aberto) return null;
 
@@ -83,6 +83,10 @@ export function ModalSignos({ aberto, aoFechar }: Props) {
     </div>
   );
 }
+
+
+
+
 
 
 
