@@ -2,7 +2,7 @@
 
 Um portal místico online que reúne **oito experiências** diferentes em uma única plataforma. Tudo calculado de verdade, direto no navegador, sem promessas mágicas e sem enrolação.
 
-> 🔗 **Acesse online:** (https://matheusabib.github.io/Consulta-de-Tarot/)
+> 🔗 **Acesse online:** (https://matheusabib.github.io/ORACULVM-painel-mistico/)
 
 ---
 
