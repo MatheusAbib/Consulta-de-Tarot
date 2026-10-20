@@ -50,8 +50,8 @@ export function ModalComoFunciona({ aberto, aoFechar }: Props) {
 
     return () => {
       document.body.classList.remove("modal-aberto");
-      document.body.style.top = "";
-      window.scrollTo(0, scrollY);
+      
+      
     };
   }, [aberto]);
 
@@ -185,6 +185,7 @@ export function ModalComoFunciona({ aberto, aoFechar }: Props) {
     </div>
   );
 }
+
 
 
 

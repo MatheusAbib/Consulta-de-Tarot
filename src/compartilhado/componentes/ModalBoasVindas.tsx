@@ -82,15 +82,15 @@ export function ModalBoasVindas() {
 
   useEffect(() => {
     if (modalAberto) {
-      document.body.style.top = `-${window.scrollY}px`;
+      
       document.body.classList.add("modal-aberto");
     } else {
       document.body.classList.remove("modal-aberto");
-      document.body.style.top = "";
+      
     }
     return () => {
       document.body.classList.remove("modal-aberto");
-      document.body.style.top = "";
+      
     };
   }, [modalAberto]);
 
@@ -319,4 +319,5 @@ export function ModalBoasVindas() {
     </div>
   );
 }
+
 

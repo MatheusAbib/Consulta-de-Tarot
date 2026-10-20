@@ -70,8 +70,8 @@ export function ModalMatriz({ aberto, aoFechar, dataNascimento }: Props) {
 
     return () => {
       document.body.classList.remove("modal-aberto");
-      document.body.style.top = "";
-      window.scrollTo(0, scrollY);
+      
+      
     };
   }, [aberto]);
 
@@ -203,6 +203,7 @@ export function ModalMatriz({ aberto, aoFechar, dataNascimento }: Props) {
     </div>
   );
 }
+
 
 
 
