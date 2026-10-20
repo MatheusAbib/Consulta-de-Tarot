@@ -210,6 +210,7 @@
       font-size: 0.82rem;
       color: $cor-primaria;
       letter-spacing: 0.02em;
+      text-align: left;
     }
 
     span {
@@ -232,6 +233,7 @@
     background: rgba(167, 139, 250, 0.04);
     border-left: 3px solid $cor-primaria;
     border-radius: 10px;
+    text-align: left;
 
     h4 {
       font-family: $fonte-titulo;

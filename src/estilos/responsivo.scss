@@ -30,6 +30,7 @@
 
   .barra-navegacao {
     padding: 1rem 3%;
+    z-index: 1;
 
     &.rolado {
       padding: 0.6rem 4%;
@@ -80,7 +81,7 @@
   }
 
   .pagina-inicio {
-    padding: 22% 2% 0 !important;
+    padding: 15% 2% 0 !important;
   }
 
   .painel-inicio {
@@ -1115,3 +1116,58 @@
 }
 
 
+
+@media (max-width: 768px) {
+  .modal-boas-vindas,
+  .modal-signos,
+  .modal-matriz,
+  .modal-como-funciona {
+    padding: 0 !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+
+    &__caixa {
+      width: 100vw !important;
+      max-width: 100vw !important;
+      height: 100dvh !important;
+      max-height: 100dvh !important;
+      border-radius: 0 !important;
+      border: none !important;
+      padding: 4rem 1.5rem 2rem !important;
+      display: flex !important;
+      flex-direction: column !important;
+    }
+
+    &__fechar {
+      position: fixed !important;
+      top: 1rem !important;
+      right: 1rem !important;
+    }
+  }
+
+  .modal-boas-vindas__etapa,
+  .modal-signos__lista,
+  .modal-matriz__lista,
+  .modal-como-funciona__secoes {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .botao-mistico {
+    background: linear-gradient(135deg, #a78bfa, #f0a4b8) !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    transform: translateZ(0) !important;
+    -webkit-transform: translateZ(0) !important;
+  }
+
+  .botao-mistico:active,
+  .botao-mistico:focus,
+  .botao-mistico:hover {
+    background: linear-gradient(135deg, #a78bfa, #f0a4b8) !important;
+    opacity: 1 !important;
+  }
+}

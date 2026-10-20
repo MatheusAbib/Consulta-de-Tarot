@@ -5,9 +5,9 @@
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 0;
   padding: 1rem 5%;
       border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  z-index: 1000;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: $sombra-vidro;
 
