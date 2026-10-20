@@ -169,7 +169,7 @@
     }
 
     &__texto {
-      font-size: 0.92rem;
+      font-size: 1rem;
     }
 
     &__linha {
@@ -1049,7 +1049,8 @@
     height: 22px;
     font-size: 0.65rem;
   }
-  .rodape__coluna p, .rodape__base{
+
+  .rodape__coluna p{
     font-size: 0.75rem;
   }
 
@@ -1169,5 +1170,18 @@
   .botao-mistico:hover {
     background: linear-gradient(135deg, #a78bfa, #f0a4b8) !important;
     opacity: 1 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .botao-perfil,
+  .botao-perfil:hover,
+  .botao-perfil:active,
+  .botao-perfil:focus,
+  .botao-perfil:focus-visible {
+    border-color: transparent !important;
+    outline: none !important;
+    box-shadow: none !important;
+    -webkit-tap-highlight-color: transparent !important;
   }
 }
