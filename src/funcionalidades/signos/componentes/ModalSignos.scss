@@ -1,10 +1,11 @@
 ﻿@use "../../../estilos/variaveis" as *;
 
-.modal-signos {
+
+.modal-signos{
   position: fixed;
   inset: 0;
   z-index: 9999;
-  
+   backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -109,4 +110,5 @@
     margin: 0;
   }
 }
+
 

@@ -1058,3 +1058,60 @@
 
 }
 
+@media (max-width: $breakpoint-mobile) {
+  .card,
+  .seletor-tiragem__cartao,
+  .painel-inicio__cartao,
+  .card-signo,
+  .servico-card,
+  .cartao-vidro,
+  .botao-mistico,
+  .abas-inline__item,
+  .interpretacoes__aba,
+  .painel-numerologia__aba,
+  .seletor-tiragem__acao,
+  .mensagem-revelada__item,
+  .resultado-numero,
+  .barra-navegacao__contato,
+  .botao-perfil,
+  .rodape__sociais a,
+  .rodape__links a,
+  .mobile-nav-toggle,
+  .mesa-leque__carta,
+  .mesa-cartas__voltar {
+    -webkit-tap-highlight-color: transparent;
+    transition: none !important;
+  }
+
+  .card:hover,
+  .seletor-tiragem__cartao:hover,
+  .painel-inicio__cartao:hover,
+  .card-signo:hover,
+  .servico-card:hover,
+  .cartao-vidro:hover,
+  .botao-mistico:hover,
+  .abas-inline__item:hover,
+  .interpretacoes__aba:hover,
+  .painel-numerologia__aba:hover,
+  .seletor-tiragem__acao:hover,
+  .mensagem-revelada__item:hover,
+  .resultado-numero:hover,
+  .barra-navegacao__contato:hover,
+  .botao-perfil:hover,
+  .rodape__sociais a:hover,
+  .rodape__links a:hover,
+  .mobile-nav-toggle:hover,
+  .mesa-leque__carta:hover,
+  .mesa-cartas__voltar:hover,
+  .diagrama-matriz__ponto:hover circle {
+    transform: none !important;
+    filter: none !important;
+    box-shadow: none !important;
+    background: inherit !important;
+    border-color: inherit !important;
+    color: inherit !important;
+    text-shadow: none !important;
+  }
+}
+
+

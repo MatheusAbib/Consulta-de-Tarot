@@ -34,6 +34,11 @@ export function ModalBoasVindas() {
   const [buscaCidade, setBuscaCidade] = useState("");
   const [cidadeSelecionada, setCidadeSelecionada] = useState<Municipio | null>(null);
   const [api, setApi] = useState<ApiMunicipios | null>(null);
+
+  useEffect(() => {
+    carregarMunicipios().then(setApi).catch(() => setApi(null));
+  }, []);
+
   const [aberto, setAberto] = useState(false);
 
   const [originais, setOriginais] = useState({
@@ -42,12 +47,7 @@ export function ModalBoasVindas() {
     hora: "",
     cidade: "",
   });
-
-  useEffect(() => {
-    carregarMunicipios().then(setApi).catch(() => setApi(null));
-  }, []);
-
-  useEffect(() => {
+      useEffect(() => {
     if (!modalAberto) return;
 
     if (completo && perfil) {
@@ -79,20 +79,13 @@ export function ModalBoasVindas() {
       setOriginais({ nome: "", data: "", hora: "", cidade: "" });
     }
   }, [modalAberto, completo, perfil]);
-
-  useEffect(() => {
-    if (modalAberto) {
-      
-      document.body.classList.add("modal-aberto");
-    } else {
-      document.body.classList.remove("modal-aberto");
-      
-    }
+useEffect(() => {
+    if (!aberto) return;
+    document.body.classList.add("modal-aberto");
     return () => {
       document.body.classList.remove("modal-aberto");
-      
     };
-  }, [modalAberto]);
+  }, [aberto]);
 
   const sugestoes: Municipio[] =
     api && buscaCidade.length >= 2 && !cidadeSelecionada
@@ -319,5 +312,9 @@ export function ModalBoasVindas() {
     </div>
   );
 }
+
+
+
+
 
 

@@ -20,17 +20,11 @@ const MODALIDADES = [
 ];
 
 export function ModalSignos({ aberto, aoFechar }: Props) {
-      useEffect(() => {
+        useEffect(() => {
     if (!aberto) return;
-
-    const scrollY = window.scrollY;
-    document.body.style.top = `-${scrollY}px`;
     document.body.classList.add("modal-aberto");
-
     return () => {
       document.body.classList.remove("modal-aberto");
-      
-      
     };
   }, [aberto]);
 
@@ -83,6 +77,7 @@ export function ModalSignos({ aberto, aoFechar }: Props) {
     </div>
   );
 }
+
 
 
 

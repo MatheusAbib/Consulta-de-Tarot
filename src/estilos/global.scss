@@ -123,24 +123,11 @@
 }
 
 
-@media (hover: none) {
-  *:hover, *:focus, *:active {
-    background-color: inherit !important;
-    color: inherit !important;
-    border-color: inherit !important;
-    transform: none !important;
-    box-shadow: none !important;
-    filter: none !important;
-    text-shadow: none !important;
-    outline: none !important;
-    -webkit-tap-highlight-color: transparent !important;
-  }
-}
-
-
 body.modal-aberto {
   overflow: hidden;
+  touch-action: none;
 }
+
 
 
 

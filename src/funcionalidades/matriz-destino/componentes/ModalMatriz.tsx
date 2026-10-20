@@ -61,17 +61,11 @@ function somaDigitos(texto: string): number {
 }
 
 export function ModalMatriz({ aberto, aoFechar, dataNascimento }: Props) {
-      useEffect(() => {
+        useEffect(() => {
     if (!aberto) return;
-
-    const scrollY = window.scrollY;
-    document.body.style.top = `-${scrollY}px`;
     document.body.classList.add("modal-aberto");
-
     return () => {
       document.body.classList.remove("modal-aberto");
-      
-      
     };
   }, [aberto]);
 
@@ -203,6 +197,7 @@ export function ModalMatriz({ aberto, aoFechar, dataNascimento }: Props) {
     </div>
   );
 }
+
 
 
 
