@@ -161,23 +161,17 @@ useEffect(() => {
   return (
     <div className="modal-boas-vindas">
       <div className="modal-boas-vindas__caixa">
-        {completo && (
-          <button
-            type="button"
-            className="modal-boas-vindas__fechar"
-            onClick={fechar}
-            aria-label="Fechar"
-          >
-            <i className="fa-solid fa-xmark" />
-          </button>
-        )}
+        
 
         {etapa === "apresentacao" && (
           <div className="modal-boas-vindas__etapa">
             <div className="modal-boas-vindas__logo">
               <img src={`${import.meta.env.BASE_URL}piramide-branco.png`} alt="ORACULVM" />
             </div>
-            <h2 className="modal-boas-vindas__titulo">{APRESENTACAO[indice].titulo}</h2>
+            <button type="button" className="modal-boas-vindas__fechar" onClick={fechar} aria-label="Fechar">
+          <i className="fa-solid fa-xmark" />
+        </button>
+        <h2 className="modal-boas-vindas__titulo">{APRESENTACAO[indice].titulo}</h2>
             <p className="modal-boas-vindas__texto">{APRESENTACAO[indice].texto}</p>
 
             <div className="modal-boas-vindas__progresso">
@@ -217,7 +211,10 @@ useEffect(() => {
             <div className="modal-boas-vindas__logo">
               <img src={`${import.meta.env.BASE_URL}piramide-branco.png`} alt="ORACULVM" />
             </div>
-            <h2 className="modal-boas-vindas__titulo">
+            <button type="button" className="modal-boas-vindas__fechar" onClick={fechar} aria-label="Fechar">
+          <i className="fa-solid fa-xmark" />
+        </button>
+        <h2 className="modal-boas-vindas__titulo">
               {completo ? "Suas informações" : "Para começar"}
             </h2>
             <p className="modal-boas-vindas__texto">
@@ -317,6 +314,7 @@ useEffect(() => {
     </div>
   );
 }
+
 
 
 

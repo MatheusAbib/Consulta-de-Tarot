@@ -60,6 +60,9 @@ export function ModalComoFunciona({ aberto, aoFechar }: Props) {
           </button>
         </div>
 
+        <button type="button" className="modal-como-funciona__fechar" onClick={aoFechar} aria-label="Fechar">
+          <i className="fa-solid fa-xmark" />
+        </button>
         <h2 className="modal-como-funciona__titulo">Como a numerologia funciona</h2>
         <p className="modal-como-funciona__texto">
           A numerologia atribui um valor de 1 a 9 para cada letra do alfabeto,
@@ -173,12 +176,11 @@ export function ModalComoFunciona({ aberto, aoFechar }: Props) {
           </p>
         </section>
       </div>
-      <button type="button" className="modal-como-funciona__fechar" onClick={aoFechar} aria-label="Fechar">
-        <i className="fa-solid fa-xmark" />
-      </button>
+      
     </div>
   );
 }
+
 
 
 

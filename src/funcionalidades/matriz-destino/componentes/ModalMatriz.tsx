@@ -114,6 +114,9 @@ export function ModalMatriz({ aberto, aoFechar, dataNascimento }: Props) {
           </button>
         </div>
 
+        <button type="button" className="modal-matriz__fechar" onClick={aoFechar} aria-label="Fechar">
+          <i className="fa-solid fa-xmark" />
+        </button>
         <h2 className="modal-matriz__titulo">A Matriz do Destino</h2>
 
         <p className="modal-matriz__texto">
@@ -191,12 +194,11 @@ export function ModalMatriz({ aberto, aoFechar, dataNascimento }: Props) {
 
   
       </div>
-      <button type="button" className="modal-matriz__fechar" onClick={aoFechar} aria-label="Fechar">
-        <i className="fa-solid fa-xmark" />
-      </button>
+      
     </div>
   );
 }
+
 
 
 
